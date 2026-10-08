@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   MessageCircle,
   Sparkles,
@@ -12,6 +12,7 @@ import {
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FloatingGoldParticles, Twinkles } from "./animated-bg";
+import { CountUp } from "./count-up";
 import { SITE, waLink, STATS } from "@/lib/site-data";
 
 const container = {
@@ -30,6 +31,10 @@ const item = {
 };
 
 export function Hero() {
+  const { scrollY } = useScroll();
+  const imgY = useTransform(scrollY, [0, 600], [0, 80]);
+  const glowY = useTransform(scrollY, [0, 600], [0, -40]);
+
   return (
     <section
       id="beranda"
@@ -151,9 +156,13 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto w-full max-w-md lg:max-w-none"
         >
+          <motion.div style={{ y: imgY }}>
           <div className="relative">
             {/* Glow halo */}
-            <div className="absolute -inset-6 rounded-[2.5rem] bg-gold-gradient opacity-30 blur-2xl animate-pulse-glow" />
+            <motion.div
+              style={{ y: glowY }}
+              className="absolute -inset-6 rounded-[2.5rem] bg-gold-gradient opacity-30 blur-2xl animate-pulse-glow"
+            />
 
             {/* Image card */}
             <motion.div
@@ -215,6 +224,7 @@ export function Hero() {
               <Star className="h-6 w-6 fill-gold text-gold" />
             </motion.div>
           </div>
+          </motion.div>
         </motion.div>
       </div>
 
@@ -229,7 +239,7 @@ export function Hero() {
           {STATS.map((s) => (
             <div key={s.label} className="text-center">
               <p className="font-display text-2xl font-extrabold text-gold-gradient">
-                {s.value}
+                <CountUp value={s.value} />
               </p>
               <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
                 {s.label}

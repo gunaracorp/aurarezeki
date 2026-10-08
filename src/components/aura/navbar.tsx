@@ -15,6 +15,7 @@ const NAV_LINKS = [
   { label: "Testimoni", href: "#testimoni" },
   { label: "Paket", href: "#paket" },
   { label: "FAQ", href: "#faq" },
+  { label: "Lokasi", href: "#lokasi" },
 ];
 
 export function Navbar() {

@@ -81,3 +81,29 @@ Work Log:
 
 Stage Summary:
 - Contact info fully updated. Owner name + nickname + full Tangerang Selatan address now visible in footer and contact section.
+
+---
+Task ID: 11
+Agent: main (orchestrator)
+Task: Add Google Maps embed + more cool/beautiful animations (count-up, 3D tilt, aurora divider, parallax).
+
+Work Log:
+- Created CountUp component (animated number count-up triggered on scroll into view; parses numeric part + suffix like "2.500+", "8 th"). Applied to hero stats bar.
+- Created TiltCard component (3D perspective tilt following mouse + moving glare highlight). Wrapped pricing cards with TiltCard (max 6deg). Hoisted glare useTransform to top level to satisfy rules-of-hooks.
+- Created AuroraDivider component (flowing gold-rose-emerald gradient wave with blurred filter + rotating gold diamond ornament) placed between About/Benefits and Testimonials/Pricing.
+- Built Location section: Google Maps embed (no API key, q=...&output=embed format) with gold-framed map, animated floating pin badge, address card showing owner name + full Pondok Pucung Indah II address, "Petunjuk Arah" + "Chat WhatsApp" buttons, floating address pill on map, rotating corner ornaments.
+- Added parallax to hero: image card + glow halo move at different speeds on scroll (useScroll/useTransform). Fixed conflicting y controls (parallax on outer wrapper, floating animation on inner card).
+- Integrated Location section into page (between CtaBanner and ContactForm). Added "Lokasi" link to navbar + footer.
+- Fixed lint errors: count-up setState moved into animate onUpdate callback (not effect body); tilt-card useTransform hoisted to top level.
+
+Verification (Agent Browser + VLM):
+- ESLint clean (0 errors, 0 warnings). Page HTTP 200. No console/page/hydration errors.
+- Location section: Google Maps iframe present with correct embed URL; VLM confirmed map renders real roads (Jl. Elang, Jl. Trihan) near address; address card shows owner name + full address + buttons.
+- Hero stats: count-up completed to final values (2.500+, 98%, 29, 8 th).
+- Pricing: 3 cards with "POPULER" badge on middle; tilt interaction ready.
+- Aurora divider: elegant gold line + rotating diamond with soft blurred gradient (subtle by design).
+- Full page (post-scroll): all 11 sections render correctly including new Location section.
+- Mobile (390px): Location section stacks vertically (address card + map), no overflow, fully responsive.
+
+Stage Summary:
+- Google Maps embed added + new premium animations (count-up, 3D tilt, aurora divider, parallax). All verified working on desktop & mobile with zero errors.

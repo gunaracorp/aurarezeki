@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Check, Crown, Sparkles, MessageCircle } from "lucide-react";
 import { PACKAGES, SITE, waLink } from "@/lib/site-data";
 import { Reveal, SectionHeading } from "./primitives";
+import { TiltCard } from "./tilt-card";
 import { cn } from "@/lib/utils";
 
 export function Pricing() {
@@ -29,12 +30,19 @@ export function Pricing() {
         <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-5">
           {PACKAGES.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.1}>
+              <TiltCard
+                max={6}
+                className={cn(
+                  "relative h-full rounded-3xl",
+                  p.popular && "md:scale-105",
+                )}
+              >
               <motion.div
                 whileHover={{ y: -8 }}
                 className={cn(
                   "relative flex h-full flex-col overflow-hidden rounded-3xl border bg-white/85 p-7 backdrop-blur transition-shadow",
                   p.popular
-                    ? "border-gold/60 shadow-warm-lg md:scale-105"
+                    ? "border-gold/60 shadow-warm-lg"
                     : "border-gold/20 shadow-warm",
                 )}
               >
@@ -109,6 +117,7 @@ export function Pricing() {
                   {p.cta}
                 </a>
               </motion.div>
+              </TiltCard>
             </Reveal>
           ))}
         </div>
