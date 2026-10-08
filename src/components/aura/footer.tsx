@@ -1,6 +1,6 @@
 "use client";
 
-import { Crown, MessageCircle, Mail, MapPin, Clock, Heart } from "lucide-react";
+import { Crown, MessageCircle, Mail, MapPin, Clock, Heart, User } from "lucide-react";
 import { SITE, waLink } from "@/lib/site-data";
 
 const LINKS = [
@@ -80,7 +80,13 @@ export function Footer() {
                     <span className="block text-xs uppercase tracking-wide text-amber-100/50">
                       WhatsApp
                     </span>
-                    {SITE.whatsapp}
+                    {SITE.ownerName}
+                    <span className="mt-0.5 block font-display text-base font-bold text-gold-light">
+                      {SITE.whatsapp}
+                    </span>
+                    <span className="text-xs italic text-amber-100/60">
+                      ({SITE.ownerNickname})
+                    </span>
                   </span>
                 </a>
               </li>
@@ -97,9 +103,9 @@ export function Footer() {
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-light" />
                 <span>
                   <span className="block text-xs uppercase tracking-wide text-amber-100/50">
-                    Lokasi
+                    Alamat
                   </span>
-                  {SITE.location}
+                  <span className="leading-relaxed">{SITE.address}</span>
                 </span>
               </li>
               <li className="flex items-start gap-3 text-amber-100/80">

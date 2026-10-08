@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Loader2, Send, MessageCircle, CheckCircle2, ShieldCheck } from "lucide-react";
+import { Loader2, Send, MessageCircle, CheckCircle2, ShieldCheck, MapPin, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -112,14 +112,31 @@ export function ContactForm() {
                 </span>
                 <div className="flex-1">
                   <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    WhatsApp
+                    WhatsApp · {SITE.ownerName}
                   </p>
                   <p className="font-display text-lg font-bold text-foreground">
                     {SITE.whatsapp}
                   </p>
+                  <p className="text-xs italic text-muted-foreground">
+                    ({SITE.ownerNickname})
+                  </p>
                 </div>
                 <Send className="h-5 w-5 text-gold-deep transition-transform group-hover:translate-x-1" />
               </a>
+
+              <div className="flex items-start gap-4 rounded-2xl border border-gold/25 bg-white/80 p-4 backdrop-blur">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-gold-gradient text-white shadow-warm">
+                  <MapPin className="h-6 w-6" />
+                </span>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    Alamat
+                  </p>
+                  <p className="text-sm font-medium leading-relaxed text-foreground">
+                    {SITE.address}
+                  </p>
+                </div>
+              </div>
 
               <div className="flex items-center gap-4 rounded-2xl border border-gold/25 bg-white/80 p-4 backdrop-blur">
                 <span className="grid h-12 w-12 place-items-center rounded-full bg-gold-gradient text-white shadow-warm">

@@ -67,3 +67,17 @@ Work Log:
 
 Stage Summary:
 - Hydration mismatch fully resolved. Particles/twinkles remain animated and visually identical, now SSR-safe.
+
+---
+Task ID: 10
+Agent: main (orchestrator)
+Task: Update contact info with owner name "Hj. Noor Yunita Setiawati (Umma Amadea)" and full address in Tangerang Selatan.
+
+Work Log:
+- Added ownerName ("Hj. Noor Yunita Setiawati"), ownerNickname ("Umma Amadea"), address (full Pondok Pucung Indah II address), addressShort to SITE in site-data.ts. Changed location from "Jakarta" to "Tangerang Selatan, Banten".
+- Updated footer.tsx: WhatsApp entry now shows owner name + bold number + italic nickname; "Lokasi" renamed "Alamat" with full address (leading-relaxed). Added User icon import.
+- Updated contact-form.tsx: WhatsApp card shows "WhatsApp · Hj. Noor Yunita Setiawati" + number + "(Umma Amadea)"; added new Alamat card (MapPin icon) with full address above Jam Operasional card.
+- Verified: ESLint clean; page HTTP 200; Agent Browser confirmed (VLM) that owner name, nickname, WhatsApp 087725581800, and full address all render correctly in both contact section and footer. No layout breakage, no errors.
+
+Stage Summary:
+- Contact info fully updated. Owner name + nickname + full Tangerang Selatan address now visible in footer and contact section.

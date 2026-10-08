@@ -33,10 +33,15 @@ export const SITE = {
   brandShort: "AURA REZEKI",
   subBrand: "QUEEN AURA",
   tagline: "Rezeki paling tinggi adalah TAUHID",
+  ownerName: "Hj. Noor Yunita Setiawati",
+  ownerNickname: "Umma Amadea",
   whatsapp: "087725581800",
   whatsappIntl: "6287725581800",
   email: "info@aurarezeki.id",
-  location: "Jakarta, Indonesia",
+  address:
+    "Pondok Pucung Indah II, Jl. Tarumanegara No.007 Blok A21/17, RT.002, Pd. Pucung, Kec. Pd. Aren, Kota Tangerang Selatan, Banten 15229",
+  addressShort: "Pd. Pucung, Pd. Aren, Tangerang Selatan, Banten 15229",
+  location: "Tangerang Selatan, Banten",
   hours: "Setiap Hari · 08.00 – 21.00 WIB",
 };
 
