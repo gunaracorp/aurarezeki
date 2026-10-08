@@ -66,15 +66,6 @@ export function Footer() {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href="/seo"
-                  className="group inline-flex items-center gap-2 text-sm text-amber-100/80 transition-colors hover:text-gold-light"
-                >
-                  <span className="h-1 w-1 rotate-45 bg-gold-light/60 transition-transform group-hover:scale-150" />
-                  Dashboard SEO
-                </a>
-              </li>
             </ul>
           </div>
 

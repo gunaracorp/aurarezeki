@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { SeoDashboard } from "@/components/aura/seo-dashboard";
 import { SEO } from "@/lib/seo-data";
 
+// Hidden internal route — no public links point here.
+// Not indexed by search engines (noindex).
 export const metadata: Metadata = {
-  title: "SEO Dashboard — Skor & Status SEO Organik",
-  description:
-    "Dashboard SEO built-in: skor SEO, meta tags, structured data (Schema.org JSON-LD), sitemap, robots.txt, dan analisis kata kunci Therapy Aura Rezeki.",
-  robots: { index: true, follow: true },
+  title: "Internal SEO Dashboard",
+  description: "Internal SEO monitoring dashboard. Not publicly listed.",
+  robots: { index: false, follow: false },
 };
 
 export default function SeoPage() {
