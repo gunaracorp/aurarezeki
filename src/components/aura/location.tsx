@@ -8,7 +8,7 @@ import { SITE, waLink } from "@/lib/site-data";
 
 // Google Maps embed (no API key needed) using the q=...&output=embed format.
 const mapQuery = encodeURIComponent(
-  "Pondok Pucung Indah II, Jl. Tarumanegara No.007 Blok A21/17, Pd. Pucung, Pd. Aren, Tangerang Selatan, Banten 15229",
+  "Pondok Pucung Indah II, Jl. Tarumanegara A22/1, Pondok Pucung, Pondok Aren, Tangerang Selatan 15229",
 );
 const mapEmbedUrl = `https://www.google.com/maps?q=${mapQuery}&output=embed&z=16`;
 const mapLinkUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
@@ -81,11 +81,11 @@ export function Location() {
                   <p className="leading-relaxed text-foreground/85">
                     Pondok Pucung Indah II
                     <br />
-                    Jl. Tarumanegara No.007, Blok A21/17, RT.002
+                    Jl. Tarumanegara A22/1
                     <br />
-                    Pd. Pucung, Kec. Pd. Aren
+                    Pondok Pucung, Pondok Aren
                     <br />
-                    Kota Tangerang Selatan, Banten 15229
+                    Tangerang Selatan 15229
                   </p>
                 </div>
                 <div className="flex items-start gap-3">

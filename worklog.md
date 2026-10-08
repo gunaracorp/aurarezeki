@@ -148,3 +148,23 @@ Result:
 
 Stage Summary:
 - Workspace download issue resolved via history rewrite + artifact cleanup + gitignore. Added reusable cleanup script.
+
+---
+Task ID: 14
+Agent: main (orchestrator)
+Task: Apply 4 urgent contact/address revisions.
+
+Work Log:
+- Updated SITE in site-data.ts: ownerName "Hj. Noor Yunita Setiawati" -> "Umma Yunita"; whatsapp "087725581800" -> "087881912019" (intl 6287881912019); address -> "Pondok Pucung Indah II, Jl. Tarumanegara A22/1, Pondok Pucung, Pondok Aren, Tangerang Selatan 15229" (removed No.007, Blok A21/17, RT.002; changed Pd.->Pondok, Kec.->Pondok Aren, dropped "Kota"/"Banten").
+- Updated hardcoded address in location.tsx (map embed query + address card lines) to match new address.
+- Updated layout.tsx metadata description phone number to 087881912019.
+- Grep confirmed zero remaining references to old phone / No.007 / A21/17 / RT.002 / Hj. Noor / Kota Tangerang.
+
+Verification (Agent Browser):
+- ESLint clean; page HTTP 200; no console/page errors.
+- DOM text check confirmed: old WA gone, new WA 087881912019 present; old owner gone, "Umma Yunita" present; "No.007" gone, "A22/1" present; old address fragments (A21/17, RT.002, Kota Tangerang) gone.
+- Google Maps iframe src now uses new address (Jl. Tarumanegara A22/1).
+- Cleaned verification screenshots from download/ to keep workspace small.
+
+Stage Summary:
+- All 4 urgent revisions applied and verified across footer, contact section, location section (incl. Google Maps), and page metadata.

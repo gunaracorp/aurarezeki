@@ -27,7 +27,7 @@ const amiri = Amiri({
 export const metadata: Metadata = {
   title: "Therapy Aura Rezeki — Tarik Kekayaan & Berkah dengan Tauhid",
   description:
-    "Therapy Aura Rezeki membuka pintu rezeki, pelarisan usaha, pelunasan hutang, dan aura keberuntungan yang bersumber dari tauhid. Konsultasi & pendaftaran: 087725581800.",
+    "Therapy Aura Rezeki membuka pintu rezeki, pelarisan usaha, pelunasan hutang, dan aura keberuntungan yang bersumber dari tauhid. Konsultasi & pendaftaran: 087881912019.",
   keywords: [
     "therapy aura rezeki",
     "aura rezeki",
