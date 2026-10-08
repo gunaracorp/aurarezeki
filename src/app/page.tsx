@@ -11,6 +11,7 @@ import { Faq } from "@/components/aura/faq";
 import { CtaBanner } from "@/components/aura/cta-banner";
 import { Location } from "@/components/aura/location";
 import { ContactForm } from "@/components/aura/contact-form";
+import { SeoContent } from "@/components/aura/seo-content";
 import { Footer } from "@/components/aura/footer";
 import { FloatingWhatsapp } from "@/components/aura/floating-whatsapp";
 
@@ -32,6 +33,7 @@ export default function Home() {
         <CtaBanner />
         <Location />
         <ContactForm />
+        <SeoContent />
       </main>
       <Footer />
       <FloatingWhatsapp />

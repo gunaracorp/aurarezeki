@@ -1,0 +1,52 @@
+{
+  "name": "Therapy Aura Rezeki",
+  "short_name": "Aura Rezeki",
+  "description": "Therapy Aura Rezeki: terapi spiritual Islami untuk membuka pintu rezeki, pelarisan usaha, pelunasan hutang & magnet keberuntungan. Berlandaskan tauhid.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8e7",
+  "theme_color": "#c9971f",
+  "orientation": "portrait-primary",
+  "lang": "id-ID",
+  "categories": ["lifestyle", "business", "health"],
+  "icons": [
+    {
+      "src": "/aura/queen-aura.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/aura/queen-aura.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/aura/queen-aura.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Konsultasi WhatsApp",
+      "short_name": "Konsultasi",
+      "url": "/#kontak",
+      "description": "Hubungi kami via WhatsApp"
+    },
+    {
+      "name": "Paket Terapi",
+      "short_name": "Paket",
+      "url": "/#paket",
+      "description": "Lihat paket therapy aura rezeki"
+    },
+    {
+      "name": "Lokasi",
+      "short_name": "Lokasi",
+      "url": "/#lokasi",
+      "description": "Lihat lokasi praktik di peta"
+    }
+  ]
+}
