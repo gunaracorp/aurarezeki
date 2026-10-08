@@ -195,3 +195,26 @@ Verification (Agent Browser + curl):
 
 Stage Summary:
 - Full organic SEO built-in (no plugins): meta + JSON-LD + sitemap + robots + manifest + PWA + geo tags + SERP preview. Public dashboard at /seo. Setara Rank Math/Yoast Premium, gratis selamanya.
+
+---
+Task ID: 16
+Agent: main (orchestrator)
+Task: Write version v1.3.0 to package.json, footer badge, and /seo dashboard release metadata.
+
+Work Log:
+- package.json: changed "version" from "0.2.1" to "1.3.0".
+- footer.tsx: added version badge (gold pill with pulsing dot + "v1.3.0", title="Versi rilis (Semantic Versioning)") next to the copyright text in the copyright row.
+- seo-dashboard.tsx: added GitBranch/Calendar/Rocket icons + new "Release Metadata" card at bottom of dashboard with:
+  - Header: Rocket icon + "Release Metadata" title + gold pill "v1.3.0" (pulsing white dot).
+  - 3 ReleaseItem tiles: Versi (SemVer) 1.3.0 [MAJOR.MINOR.PATCH], Tanggal Rilis (today id-ID locale, Stable release), Status Production-ready (Stabil · SEO-ready).
+  - Changelog paragraph describing v1.3.0 features + link to semver.org.
+  - Added ReleaseItem helper component (gold gradient icon + label/value/hint).
+
+Verification (Agent Browser + VLM):
+- ESLint clean (0 errors, 0 warnings). package.json version confirmed "1.3.0".
+- Footer: DOM check confirmed "v1.3.0" present; VLM confirmed gold pill badge next to copyright.
+- /seo dashboard: VLM confirmed Release Metadata card with v1.3.0 badge, 3 release tiles (Versi/Tanggal/Status), and changelog paragraph.
+- No console/page errors. Screenshots cleaned.
+
+Stage Summary:
+- v1.3.0 (Semantic Versioning) now stamped in package.json, displayed as a badge in the footer, and documented as release metadata on the /seo dashboard.

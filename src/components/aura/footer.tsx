@@ -222,9 +222,18 @@ export function Footer() {
 
           {/* copyright row */}
           <div className="mt-6 flex flex-col items-center justify-between gap-3 sm:flex-row">
-            <p className="text-xs text-amber-100/60">
-              &copy; {new Date().getFullYear()} {SITE.brand}. Hak cipta dilindungi.
-            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="text-xs text-amber-100/60">
+                &copy; {new Date().getFullYear()} {SITE.brand}. Hak cipta dilindungi.
+              </p>
+              <span
+                title="Versi rilis (Semantic Versioning)"
+                className="inline-flex items-center gap-1 rounded-full border border-gold/30 bg-gold/10 px-2.5 py-0.5 text-[11px] font-semibold text-gold-light"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-gold-light animate-pulse-glow" />
+                v1.3.0
+              </span>
+            </div>
             <p className="inline-flex items-center gap-1.5 text-xs text-amber-100/60">
               Dibuat dengan{" "}
               <Heart className="h-3.5 w-3.5 fill-rose-400 text-rose-400" /> &amp;
