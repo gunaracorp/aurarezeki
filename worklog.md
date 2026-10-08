@@ -218,3 +218,23 @@ Verification (Agent Browser + VLM):
 
 Stage Summary:
 - v1.3.0 (Semantic Versioning) now stamped in package.json, displayed as a badge in the footer, and documented as release metadata on the /seo dashboard.
+
+---
+Task ID: 17
+Agent: main (orchestrator)
+Task: Remove "Dibuat dengan ❤ & berkah tauhid" (looks AI-made) from footer; replace with copyright "All rights reserved".
+
+Work Log:
+- Removed the "Dibuat dengan <Heart/> & berkah tauhid" paragraph from footer copyright row.
+- Replaced left-side copyright text "Hak cipta dilindungi" with English "All rights reserved." (single copyright line, no duplication).
+- Right side now shows "Hosted by JuraganWebsite · System by PT Digital Bisnis Manajemen" summary line (instead of duplicate copyright).
+- Removed unused `Heart` icon import from footer.tsx.
+- v1.3.0 badge retained next to copyright.
+
+Verification (Agent Browser + VLM):
+- ESLint clean. Footer DOM check: "Dibuat dengan" gone (false), "berkah tauhid" gone (false), "All rights reserved" present (true).
+- VLM confirmed: no love/berkah text, copyright present with v1.3.0 badge, hosted/system summary on the right, no layout errors.
+- Screenshots cleaned.
+
+Stage Summary:
+- Footer no longer shows AI-made signature; replaced with standard "All rights reserved." copyright + hosted/system credits summary.

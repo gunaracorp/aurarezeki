@@ -7,7 +7,6 @@ import {
   Mail,
   MapPin,
   Clock,
-  Heart,
   User,
   Server,
   Cpu,
@@ -224,7 +223,7 @@ export function Footer() {
           <div className="mt-6 flex flex-col items-center justify-between gap-3 sm:flex-row">
             <div className="flex flex-wrap items-center gap-3">
               <p className="text-xs text-amber-100/60">
-                &copy; {new Date().getFullYear()} {SITE.brand}. Hak cipta dilindungi.
+                &copy; {new Date().getFullYear()} {SITE.brand}. All rights reserved.
               </p>
               <span
                 title="Versi rilis (Semantic Versioning)"
@@ -234,10 +233,8 @@ export function Footer() {
                 v1.3.0
               </span>
             </div>
-            <p className="inline-flex items-center gap-1.5 text-xs text-amber-100/60">
-              Dibuat dengan{" "}
-              <Heart className="h-3.5 w-3.5 fill-rose-400 text-rose-400" /> &amp;
-              berkah tauhid
+            <p className="text-xs text-amber-100/60">
+              Hosted by JuraganWebsite · System by PT Digital Bisnis Manajemen
             </p>
           </div>
         </div>
