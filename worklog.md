@@ -107,3 +107,25 @@ Verification (Agent Browser + VLM):
 
 Stage Summary:
 - Google Maps embed added + new premium animations (count-up, 3D tilt, aurora divider, parallax). All verified working on desktop & mobile with zero errors.
+
+---
+Task ID: 12
+Agent: main (orchestrator)
+Task: Add "Hosted by JuraganWebsite" (link juraganwebsite.web.id) and "System by PT Digital Bisnis Manajemen" (link digiman.id) credits in footer with elegant design.
+
+Work Log:
+- Added motion + Server, Cpu, ExternalLink icons to footer imports.
+- Redesigned footer bottom bar into a "Credits bar": 2-column grid of credit cards.
+  - Hosted by card: gold-gradient Server icon, "JuraganWebsite" title + juraganwebsite.web.id, links to https://juraganwebsite.web.id.
+  - System by card: emerald-to-teal Cpu icon, "PT Digital Bisnis Manajemen" + digiman.id, links to https://digiman.id.
+  - Both cards: glass background (bg-white/[0.04]), gold border, shimmer sweep on hover, lift on hover (whileHover y:-3), ExternalLink icon.
+- Preserved copyright row below ("© 2026 Therapy Aura Rezeki" + "Dibuat dengan ❤ & berkah tauhid").
+
+Verification (Agent Browser + VLM):
+- ESLint clean; page HTTP 200; no console/page errors.
+- DOM link check confirmed both credit links present with correct URLs (juraganwebsite.web.id, digiman.id).
+- VLM confirmed both credit cards render elegantly (gold server icon, emerald cpu icon, gradients, hover shimmer); copyright row intact.
+- Full copyright text "Dibuat dengan & berkah tauhid" verified present in DOM (heart is an icon, only appeared empty in plain text extraction).
+
+Stage Summary:
+- Footer credits fully added and verified. Hosted by JuraganWebsite + System by PT Digital Bisnis Manajemen, both linking to correct domains, with premium animated card design.

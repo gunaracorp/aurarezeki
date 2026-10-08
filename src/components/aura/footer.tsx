@@ -1,6 +1,18 @@
 "use client";
 
-import { Crown, MessageCircle, Mail, MapPin, Clock, Heart, User } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  Crown,
+  MessageCircle,
+  Mail,
+  MapPin,
+  Clock,
+  Heart,
+  User,
+  Server,
+  Cpu,
+  ExternalLink,
+} from "lucide-react";
 import { SITE, waLink } from "@/lib/site-data";
 
 const LINKS = [
@@ -145,13 +157,71 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row">
-          <p className="text-xs text-amber-100/60">
-            &copy; {new Date().getFullYear()} {SITE.brand}. Hak cipta dilindungi.
-          </p>
-          <p className="inline-flex items-center gap-1.5 text-xs text-amber-100/60">
-            Dibuat dengan <Heart className="h-3.5 w-3.5 fill-rose-400 text-rose-400" /> &amp; berkah tauhid
-          </p>
+        {/* Credits bar */}
+        <div className="mt-12 border-t border-white/10 pt-8">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {/* Hosted by */}
+            <motion.a
+              href="https://juraganwebsite.web.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -3 }}
+              className="group relative flex items-center gap-3 overflow-hidden rounded-2xl border border-gold/20 bg-white/[0.04] p-4 backdrop-blur transition-colors hover:border-gold/50 hover:bg-white/[0.07]"
+            >
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-gold-light/15 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              <span className="relative grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gold-gradient text-white shadow-warm">
+                <Server className="h-5 w-5" />
+              </span>
+              <span className="relative leading-tight">
+                <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-light/70">
+                  Hosted by
+                </span>
+                <span className="inline-flex items-center gap-1 font-display text-base font-bold text-white">
+                  JuraganWebsite
+                  <ExternalLink className="h-3 w-3 opacity-60 transition-opacity group-hover:opacity-100" />
+                </span>
+                <span className="block text-[11px] text-amber-100/50">
+                  juraganwebsite.web.id
+                </span>
+              </span>
+            </motion.a>
+
+            {/* System by */}
+            <motion.a
+              href="https://digiman.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -3 }}
+              className="group relative flex items-center gap-3 overflow-hidden rounded-2xl border border-gold/20 bg-white/[0.04] p-4 backdrop-blur transition-colors hover:border-gold/50 hover:bg-white/[0.07]"
+            >
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-gold-light/15 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              <span className="relative grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white shadow-warm">
+                <Cpu className="h-5 w-5" />
+              </span>
+              <span className="relative leading-tight">
+                <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-light/70">
+                  System by
+                </span>
+                <span className="inline-flex items-center gap-1 font-display text-base font-bold text-white">
+                  PT Digital Bisnis Manajemen
+                  <ExternalLink className="h-3 w-3 opacity-60 transition-opacity group-hover:opacity-100" />
+                </span>
+                <span className="block text-[11px] text-amber-100/50">digiman.id</span>
+              </span>
+            </motion.a>
+          </div>
+
+          {/* copyright row */}
+          <div className="mt-6 flex flex-col items-center justify-between gap-3 sm:flex-row">
+            <p className="text-xs text-amber-100/60">
+              &copy; {new Date().getFullYear()} {SITE.brand}. Hak cipta dilindungi.
+            </p>
+            <p className="inline-flex items-center gap-1.5 text-xs text-amber-100/60">
+              Dibuat dengan{" "}
+              <Heart className="h-3.5 w-3.5 fill-rose-400 text-rose-400" /> &amp;
+              berkah tauhid
+            </p>
+          </div>
         </div>
       </div>
     </footer>
