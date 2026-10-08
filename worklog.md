@@ -238,3 +238,23 @@ Verification (Agent Browser + VLM):
 
 Stage Summary:
 - Footer no longer shows AI-made signature; replaced with standard "All rights reserved." copyright + hosted/system credits summary.
+
+---
+Task ID: 18
+Agent: main (orchestrator)
+Task: Redesign footer credits — remove big hosted/system cards (looked cheap/over-prominent), replace with one minimal small credit line like premium sites.
+
+Work Log:
+- Removed the 2 large credit cards (motion.a with big icon tiles, gradient backgrounds, big bold text) for Hosted by & System by.
+- Replaced with a single minimal credit row at the bottom: tiny 11px text, copyright + v1.3.0 badge on left, "Hosted by JuraganWebsite · System by PT Digital Bisnis Manajemen" plain links on right (just hover-color change, no card).
+- Removed unused imports (motion, Server, Cpu, ExternalLink, User).
+- Fixed JSX closing-tag parse error (extra </div>) that caused lint/HTTP 500.
+
+Verification (Agent Browser + VLM):
+- ESLint clean (0 errors). Page HTTP 200.
+- Footer height dropped to 546px (was much taller with big cards).
+- DOM confirmed both credit links present as small text.
+- VLM: big cards gone, credits now appear as minimal small text at the bottom, looks premium/elegant, no layout errors.
+
+Stage Summary:
+- Footer credits now minimal & elegant (no big cards). Premium feel restored. Same links, same v1.3.0 badge, much smaller footprint.

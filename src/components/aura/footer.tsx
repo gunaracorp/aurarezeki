@@ -1,16 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   Crown,
   MessageCircle,
   Mail,
   MapPin,
   Clock,
-  User,
-  Server,
-  Cpu,
-  ExternalLink,
 } from "lucide-react";
 import { SITE, waLink } from "@/lib/site-data";
 
@@ -165,77 +160,33 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Credits bar */}
-        <div className="mt-12 border-t border-white/10 pt-8">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {/* Hosted by */}
-            <motion.a
+        {/* Minimal credit line */}
+        <div className="mt-10 flex flex-col items-center justify-between gap-2 border-t border-white/10 pt-5 text-center sm:flex-row sm:text-left">
+          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[11px] text-amber-100/45">
+            <span>&copy; {new Date().getFullYear()} {SITE.brand}. All rights reserved.</span>
+            <span className="inline-flex items-center gap-1 rounded-full border border-gold/25 bg-gold/5 px-2 py-0.5 font-semibold text-gold-light/80">
+              <span className="h-1 w-1 rounded-full bg-gold-light/70" />
+              v1.3.0
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-[11px] text-amber-100/40">
+            <a
               href="https://juraganwebsite.web.id"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ y: -3 }}
-              className="group relative flex items-center gap-3 overflow-hidden rounded-2xl border border-gold/20 bg-white/[0.04] p-4 backdrop-blur transition-colors hover:border-gold/50 hover:bg-white/[0.07]"
+              className="transition-colors hover:text-gold-light"
             >
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-gold-light/15 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gold-gradient text-white shadow-warm">
-                <Server className="h-5 w-5" />
-              </span>
-              <span className="relative leading-tight">
-                <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-light/70">
-                  Hosted by
-                </span>
-                <span className="inline-flex items-center gap-1 font-display text-base font-bold text-white">
-                  JuraganWebsite
-                  <ExternalLink className="h-3 w-3 opacity-60 transition-opacity group-hover:opacity-100" />
-                </span>
-                <span className="block text-[11px] text-amber-100/50">
-                  juraganwebsite.web.id
-                </span>
-              </span>
-            </motion.a>
-
-            {/* System by */}
-            <motion.a
+              Hosted by JuraganWebsite
+            </a>
+            <span className="text-amber-100/20">·</span>
+            <a
               href="https://digiman.id"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ y: -3 }}
-              className="group relative flex items-center gap-3 overflow-hidden rounded-2xl border border-gold/20 bg-white/[0.04] p-4 backdrop-blur transition-colors hover:border-gold/50 hover:bg-white/[0.07]"
+              className="transition-colors hover:text-gold-light"
             >
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-gold-light/15 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white shadow-warm">
-                <Cpu className="h-5 w-5" />
-              </span>
-              <span className="relative leading-tight">
-                <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-light/70">
-                  System by
-                </span>
-                <span className="inline-flex items-center gap-1 font-display text-base font-bold text-white">
-                  PT Digital Bisnis Manajemen
-                  <ExternalLink className="h-3 w-3 opacity-60 transition-opacity group-hover:opacity-100" />
-                </span>
-                <span className="block text-[11px] text-amber-100/50">digiman.id</span>
-              </span>
-            </motion.a>
-          </div>
-
-          {/* copyright row */}
-          <div className="mt-6 flex flex-col items-center justify-between gap-3 sm:flex-row">
-            <div className="flex flex-wrap items-center gap-3">
-              <p className="text-xs text-amber-100/60">
-                &copy; {new Date().getFullYear()} {SITE.brand}. All rights reserved.
-              </p>
-              <span
-                title="Versi rilis (Semantic Versioning)"
-                className="inline-flex items-center gap-1 rounded-full border border-gold/30 bg-gold/10 px-2.5 py-0.5 text-[11px] font-semibold text-gold-light"
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-gold-light animate-pulse-glow" />
-                v1.3.0
-              </span>
-            </div>
-            <p className="text-xs text-amber-100/60">
-              Hosted by JuraganWebsite · System by PT Digital Bisnis Manajemen
-            </p>
+              System by PT Digital Bisnis Manajemen
+            </a>
           </div>
         </div>
       </div>
