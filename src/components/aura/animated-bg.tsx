@@ -1,7 +1,23 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { motion } from "framer-motion";
+
+/**
+ * Deterministic seeded PRNG (mulberry32).
+ * Using a fixed seed guarantees the SAME sequence on the server (SSR)
+ * and the client (hydration), avoiding hydration mismatches caused by
+ * Math.random() producing different values per render.
+ */
+function mulberry32(seed: number) {
+  let a = seed | 0;
+  return function () {
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 15), 0x6d2b79f5)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
 
 type Particle = {
   id: number;
@@ -17,18 +33,17 @@ type Particle = {
  * Purely decorative; pointer-events disabled.
  */
 export function FloatingGoldParticles({ count = 22 }: { count?: number }) {
-  const particles = useMemo<Particle[]>(
-    () =>
-      Array.from({ length: count }).map((_, i) => ({
-        id: i,
-        left: Math.random() * 100,
-        size: 4 + Math.random() * 10,
-        delay: Math.random() * 8,
-        duration: 9 + Math.random() * 12,
-        opacity: 0.25 + Math.random() * 0.55,
-      })),
-    [count],
-  );
+  const particles = useMemo<Particle[]>(() => {
+    const rng = mulberry32(0x9e3779b1); // fixed seed -> SSR/client identical
+    return Array.from({ length: count }).map((_, i) => ({
+      id: i,
+      left: rng() * 100,
+      size: 4 + rng() * 10,
+      delay: rng() * 8,
+      duration: 9 + rng() * 12,
+      opacity: 0.25 + rng() * 0.55,
+    }));
+  }, [count]);
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -99,17 +114,16 @@ type Star = { id: number; top: number; left: number; delay: number; size: number
 
 /** Twinkling tiny stars scattered across a section. */
 export function Twinkles({ count = 18 }: { count?: number }) {
-  const stars = useMemo<Star[]>(
-    () =>
-      Array.from({ length: count }).map((_, i) => ({
-        id: i,
-        top: Math.random() * 100,
-        left: Math.random() * 100,
-        delay: Math.random() * 4,
-        size: 2 + Math.random() * 3,
-      })),
-    [count],
-  );
+  const stars = useMemo<Star[]>(() => {
+    const rng = mulberry32(0x85ebca77); // fixed seed -> SSR/client identical
+    return Array.from({ length: count }).map((_, i) => ({
+      id: i,
+      top: rng() * 100,
+      left: rng() * 100,
+      delay: rng() * 4,
+      size: 2 + rng() * 3,
+    }));
+  }, [count]);
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">

@@ -1,0 +1,2002 @@
+     1→## Error Type
+     2→Console Error
+     3→
+     4→## Error Message
+     5→A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+     6→
+     7→- A server/client branch `if (typeof window !== 'undefined')`.
+     8→- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+     9→- Date formatting in a user's locale which doesn't match the server.
+    10→- External changing data without sending a snapshot of it along with the HTML.
+    11→- Invalid HTML tag nesting.
+    12→
+    13→It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+    14→
+    15→https://react.dev/link/hydration-mismatch
+    16→
+    17→  ...
+    18→    <LoadingBoundary name="/" loading={null}>
+    19→      <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+    20→        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+    21→          <RedirectBoundary>
+    22→            <RedirectErrorBoundary router={{...}}>
+    23→              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} segmentPath={[...]} ...>
+    24→                <SegmentViewNode type="page" pagePath="page.tsx">
+    25→                  <SegmentTrieNode>
+    26→                  <Home>
+    27→                    <div className="relative f...">
+    28→                      <Navbar>
+    29→                      <main className="flex-1">
+    30→                        <Hero>
+    31→                          <section id="beranda" className="relative f...">
+    32→                            <div>
+    33→                            <Twinkles count={26}>
+    34→                              <div className="pointer-ev...">
+    35→                                <span
+    36→                                  className="absolute animate-twinkle"
+    37→                                  style={{
+    38→+                                   top: "37.292658761526724%"
+    39→-                                   top: "73.22%"
+    40→+                                   left: "17.922251550028733%"
+    41→-                                   left: "82.8787%"
+    42→+                                   width: 3.21962991941717
+    43→-                                   width: "3.35589px"
+    44→+                                   height: 3.21962991941717
+    45→-                                   height: "3.35589px"
+    46→+                                   animationDelay: "0.017113536500929616s"
+    47→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+    48→+                                   borderRadius: 9999
+    49→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+    50→-                                   animation-delay: "1.10926s"
+    51→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+    52→-                                   background-position-x: "initial"
+    53→-                                   background-position-y: "initial"
+    54→-                                   background-size: "initial"
+    55→-                                   background-repeat: "initial"
+    56→-                                   background-attachment: "initial"
+    57→-                                   background-origin: "initial"
+    58→-                                   background-clip: "initial"
+    59→-                                   background-color: "initial"
+    60→-                                   border-top-left-radius: "9999px"
+    61→-                                   border-top-right-radius: "9999px"
+    62→-                                   border-bottom-right-radius: "9999px"
+    63→-                                   border-bottom-left-radius: "9999px"
+    64→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+    65→                                  }}
+    66→                                >
+    67→                                <span
+    68→                                  className="absolute animate-twinkle"
+    69→                                  style={{
+    70→+                                   top: "96.51098503438612%"
+    71→-                                   top: "59.4775%"
+    72→+                                   left: "24.21966663946692%"
+    73→-                                   left: "89.7133%"
+    74→+                                   width: 3.259486251266651
+    75→-                                   width: "3.93077px"
+    76→+                                   height: 3.259486251266651
+    77→-                                   height: "3.93077px"
+    78→+                                   animationDelay: "2.199849129767727s"
+    79→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+    80→+                                   borderRadius: 9999
+    81→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+    82→-                                   animation-delay: "0.705094s"
+    83→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+    84→-                                   background-position-x: "initial"
+    85→-                                   background-position-y: "initial"
+    86→-                                   background-size: "initial"
+    87→-                                   background-repeat: "initial"
+    88→-                                   background-attachment: "initial"
+    89→-                                   background-origin: "initial"
+    90→-                                   background-clip: "initial"
+    91→-                                   background-color: "initial"
+    92→-                                   border-top-left-radius: "9999px"
+    93→-                                   border-top-right-radius: "9999px"
+    94→-                                   border-bottom-right-radius: "9999px"
+    95→-                                   border-bottom-left-radius: "9999px"
+    96→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+    97→                                  }}
+    98→                                >
+    99→                                <span
+   100→                                  className="absolute animate-twinkle"
+   101→                                  style={{
+   102→+                                   top: "86.37672517268167%"
+   103→-                                   top: "34.0039%"
+   104→+                                   left: "37.56067309549209%"
+   105→-                                   left: "89.9135%"
+   106→+                                   width: 2.4020641608413165
+   107→-                                   width: "4.4411px"
+   108→+                                   height: 2.4020641608413165
+   109→-                                   height: "4.4411px"
+   110→+                                   animationDelay: "1.5588863619720956s"
+   111→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   112→+                                   borderRadius: 9999
+   113→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   114→-                                   animation-delay: "0.967654s"
+   115→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   116→-                                   background-position-x: "initial"
+   117→-                                   background-position-y: "initial"
+   118→-                                   background-size: "initial"
+   119→-                                   background-repeat: "initial"
+   120→-                                   background-attachment: "initial"
+   121→-                                   background-origin: "initial"
+   122→-                                   background-clip: "initial"
+   123→-                                   background-color: "initial"
+   124→-                                   border-top-left-radius: "9999px"
+   125→-                                   border-top-right-radius: "9999px"
+   126→-                                   border-bottom-right-radius: "9999px"
+   127→-                                   border-bottom-left-radius: "9999px"
+   128→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   129→                                  }}
+   130→                                >
+   131→                                <span
+   132→                                  className="absolute animate-twinkle"
+   133→                                  style={{
+   134→+                                   top: "38.82611880322063%"
+   135→-                                   top: "57.6518%"
+   136→+                                   left: "13.296868244725069%"
+   137→-                                   left: "38.1253%"
+   138→+                                   width: 3.7958588092127874
+   139→-                                   width: "3.97688px"
+   140→+                                   height: 3.7958588092127874
+   141→-                                   height: "3.97688px"
+   142→+                                   animationDelay: "2.3443088108947774s"
+   143→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   144→+                                   borderRadius: 9999
+   145→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   146→-                                   animation-delay: "0.943117s"
+   147→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   148→-                                   background-position-x: "initial"
+   149→-                                   background-position-y: "initial"
+   150→-                                   background-size: "initial"
+   151→-                                   background-repeat: "initial"
+   152→-                                   background-attachment: "initial"
+   153→-                                   background-origin: "initial"
+   154→-                                   background-clip: "initial"
+   155→-                                   background-color: "initial"
+   156→-                                   border-top-left-radius: "9999px"
+   157→-                                   border-top-right-radius: "9999px"
+   158→-                                   border-bottom-right-radius: "9999px"
+   159→-                                   border-bottom-left-radius: "9999px"
+   160→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   161→                                  }}
+   162→                                >
+   163→                                <span
+   164→                                  className="absolute animate-twinkle"
+   165→                                  style={{
+   166→+                                   top: "4.843621992477565%"
+   167→-                                   top: "49.6427%"
+   168→+                                   left: "13.251754924437009%"
+   169→-                                   left: "84.8555%"
+   170→+                                   width: 4.384296840199656
+   171→-                                   width: "3.59302px"
+   172→+                                   height: 4.384296840199656
+   173→-                                   height: "3.59302px"
+   174→+                                   animationDelay: "2.676564695240481s"
+   175→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   176→+                                   borderRadius: 9999
+   177→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   178→-                                   animation-delay: "0.945878s"
+   179→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   180→-                                   background-position-x: "initial"
+   181→-                                   background-position-y: "initial"
+   182→-                                   background-size: "initial"
+   183→-                                   background-repeat: "initial"
+   184→-                                   background-attachment: "initial"
+   185→-                                   background-origin: "initial"
+   186→-                                   background-clip: "initial"
+   187→-                                   background-color: "initial"
+   188→-                                   border-top-left-radius: "9999px"
+   189→-                                   border-top-right-radius: "9999px"
+   190→-                                   border-bottom-right-radius: "9999px"
+   191→-                                   border-bottom-left-radius: "9999px"
+   192→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   193→                                  }}
+   194→                                >
+   195→                                <span
+   196→                                  className="absolute animate-twinkle"
+   197→                                  style={{
+   198→+                                   top: "12.150901754963073%"
+   199→-                                   top: "89.7315%"
+   200→+                                   left: "65.2021216781112%"
+   201→-                                   left: "15.1653%"
+   202→+                                   width: 2.0217571770226326
+   203→-                                   width: "2.43815px"
+   204→+                                   height: 2.0217571770226326
+   205→-                                   height: "2.43815px"
+   206→+                                   animationDelay: "0.15761973384353478s"
+   207→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   208→+                                   borderRadius: 9999
+   209→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   210→-                                   animation-delay: "3.92923s"
+   211→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   212→-                                   background-position-x: "initial"
+   213→-                                   background-position-y: "initial"
+   214→-                                   background-size: "initial"
+   215→-                                   background-repeat: "initial"
+   216→-                                   background-attachment: "initial"
+   217→-                                   background-origin: "initial"
+   218→-                                   background-clip: "initial"
+   219→-                                   background-color: "initial"
+   220→-                                   border-top-left-radius: "9999px"
+   221→-                                   border-top-right-radius: "9999px"
+   222→-                                   border-bottom-right-radius: "9999px"
+   223→-                                   border-bottom-left-radius: "9999px"
+   224→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   225→                                  }}
+   226→                                >
+   227→                                <span
+   228→                                  className="absolute animate-twinkle"
+   229→                                  style={{
+   230→+                                   top: "42.7774550212259%"
+   231→-                                   top: "52.0139%"
+   232→+                                   left: "9.999910841904224%"
+   233→-                                   left: "70.4209%"
+   234→+                                   width: 3.080824173434482
+   235→-                                   width: "3.47795px"
+   236→+                                   height: 3.080824173434482
+   237→-                                   height: "3.47795px"
+   238→+                                   animationDelay: "2.6827161566831568s"
+   239→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   240→+                                   borderRadius: 9999
+   241→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   242→-                                   animation-delay: "1.46277s"
+   243→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   244→-                                   background-position-x: "initial"
+   245→-                                   background-position-y: "initial"
+   246→-                                   background-size: "initial"
+   247→-                                   background-repeat: "initial"
+   248→-                                   background-attachment: "initial"
+   249→-                                   background-origin: "initial"
+   250→-                                   background-clip: "initial"
+   251→-                                   background-color: "initial"
+   252→-                                   border-top-left-radius: "9999px"
+   253→-                                   border-top-right-radius: "9999px"
+   254→-                                   border-bottom-right-radius: "9999px"
+   255→-                                   border-bottom-left-radius: "9999px"
+   256→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   257→                                  }}
+   258→                                >
+   259→                                <span
+   260→                                  className="absolute animate-twinkle"
+   261→                                  style={{
+   262→+                                   top: "38.80144172364185%"
+   263→-                                   top: "2.47419%"
+   264→+                                   left: "59.25803785584334%"
+   265→-                                   left: "74.5603%"
+   266→+                                   width: 2.6087952766933222
+   267→-                                   width: "2.66951px"
+   268→+                                   height: 2.6087952766933222
+   269→-                                   height: "2.66951px"
+   270→+                                   animationDelay: "1.1964225630811893s"
+   271→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   272→+                                   borderRadius: 9999
+   273→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   274→-                                   animation-delay: "2.13196s"
+   275→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   276→-                                   background-position-x: "initial"
+   277→-                                   background-position-y: "initial"
+   278→-                                   background-size: "initial"
+   279→-                                   background-repeat: "initial"
+   280→-                                   background-attachment: "initial"
+   281→-                                   background-origin: "initial"
+   282→-                                   background-clip: "initial"
+   283→-                                   background-color: "initial"
+   284→-                                   border-top-left-radius: "9999px"
+   285→-                                   border-top-right-radius: "9999px"
+   286→-                                   border-bottom-right-radius: "9999px"
+   287→-                                   border-bottom-left-radius: "9999px"
+   288→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   289→                                  }}
+   290→                                >
+   291→                                <span
+   292→                                  className="absolute animate-twinkle"
+   293→                                  style={{
+   294→+                                   top: "93.2427589045266%"
+   295→-                                   top: "44.5442%"
+   296→+                                   left: "75.29802108872505%"
+   297→-                                   left: "42.5698%"
+   298→+                                   width: 3.811145326186169
+   299→-                                   width: "4.36329px"
+   300→+                                   height: 3.811145326186169
+   301→-                                   height: "4.36329px"
+   302→+                                   animationDelay: "1.1480892321197218s"
+   303→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   304→+                                   borderRadius: 9999
+   305→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   306→-                                   animation-delay: "1.5828s"
+   307→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   308→-                                   background-position-x: "initial"
+   309→-                                   background-position-y: "initial"
+   310→-                                   background-size: "initial"
+   311→-                                   background-repeat: "initial"
+   312→-                                   background-attachment: "initial"
+   313→-                                   background-origin: "initial"
+   314→-                                   background-clip: "initial"
+   315→-                                   background-color: "initial"
+   316→-                                   border-top-left-radius: "9999px"
+   317→-                                   border-top-right-radius: "9999px"
+   318→-                                   border-bottom-right-radius: "9999px"
+   319→-                                   border-bottom-left-radius: "9999px"
+   320→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   321→                                  }}
+   322→                                >
+   323→                                <span
+   324→                                  className="absolute animate-twinkle"
+   325→                                  style={{
+   326→+                                   top: "44.56451557983194%"
+   327→-                                   top: "60.626%"
+   328→+                                   left: "45.13143529318956%"
+   329→-                                   left: "11.7347%"
+   330→+                                   width: 4.649270761169472
+   331→-                                   width: "3.32399px"
+   332→+                                   height: 4.649270761169472
+   333→-                                   height: "3.32399px"
+   334→+                                   animationDelay: "2.102807738277266s"
+   335→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   336→+                                   borderRadius: 9999
+   337→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   338→-                                   animation-delay: "3.12058s"
+   339→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   340→-                                   background-position-x: "initial"
+   341→-                                   background-position-y: "initial"
+   342→-                                   background-size: "initial"
+   343→-                                   background-repeat: "initial"
+   344→-                                   background-attachment: "initial"
+   345→-                                   background-origin: "initial"
+   346→-                                   background-clip: "initial"
+   347→-                                   background-color: "initial"
+   348→-                                   border-top-left-radius: "9999px"
+   349→-                                   border-top-right-radius: "9999px"
+   350→-                                   border-bottom-right-radius: "9999px"
+   351→-                                   border-bottom-left-radius: "9999px"
+   352→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   353→                                  }}
+   354→                                >
+   355→                                <span
+   356→                                  className="absolute animate-twinkle"
+   357→                                  style={{
+   358→+                                   top: "87.20690543710485%"
+   359→-                                   top: "84.3532%"
+   360→+                                   left: "2.5772309119996617%"
+   361→-                                   left: "30.1335%"
+   362→+                                   width: 3.3897450923591883
+   363→-                                   width: "4.21791px"
+   364→+                                   height: 3.3897450923591883
+   365→-                                   height: "4.21791px"
+   366→+                                   animationDelay: "2.8989426261248816s"
+   367→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   368→+                                   borderRadius: 9999
+   369→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   370→-                                   animation-delay: "0.165084s"
+   371→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   372→-                                   background-position-x: "initial"
+   373→-                                   background-position-y: "initial"
+   374→-                                   background-size: "initial"
+   375→-                                   background-repeat: "initial"
+   376→-                                   background-attachment: "initial"
+   377→-                                   background-origin: "initial"
+   378→-                                   background-clip: "initial"
+   379→-                                   background-color: "initial"
+   380→-                                   border-top-left-radius: "9999px"
+   381→-                                   border-top-right-radius: "9999px"
+   382→-                                   border-bottom-right-radius: "9999px"
+   383→-                                   border-bottom-left-radius: "9999px"
+   384→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   385→                                  }}
+   386→                                >
+   387→                                <span
+   388→                                  className="absolute animate-twinkle"
+   389→                                  style={{
+   390→+                                   top: "29.139736947230265%"
+   391→-                                   top: "32.797%"
+   392→+                                   left: "77.01778413202693%"
+   393→-                                   left: "67.1054%"
+   394→+                                   width: 2.0029060632337536
+   395→-                                   width: "4.45525px"
+   396→+                                   height: 2.0029060632337536
+   397→-                                   height: "4.45525px"
+   398→+                                   animationDelay: "3.071443626220898s"
+   399→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   400→+                                   borderRadius: 9999
+   401→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   402→-                                   animation-delay: "3.66636s"
+   403→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   404→-                                   background-position-x: "initial"
+   405→-                                   background-position-y: "initial"
+   406→-                                   background-size: "initial"
+   407→-                                   background-repeat: "initial"
+   408→-                                   background-attachment: "initial"
+   409→-                                   background-origin: "initial"
+   410→-                                   background-clip: "initial"
+   411→-                                   background-color: "initial"
+   412→-                                   border-top-left-radius: "9999px"
+   413→-                                   border-top-right-radius: "9999px"
+   414→-                                   border-bottom-right-radius: "9999px"
+   415→-                                   border-bottom-left-radius: "9999px"
+   416→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   417→                                  }}
+   418→                                >
+   419→                                <span
+   420→                                  className="absolute animate-twinkle"
+   421→                                  style={{
+   422→+                                   top: "8.75387105920995%"
+   423→-                                   top: "25.6514%"
+   424→+                                   left: "97.36632725305053%"
+   425→-                                   left: "10.0613%"
+   426→+                                   width: 3.490258852930372
+   427→-                                   width: "3.44287px"
+   428→+                                   height: 3.490258852930372
+   429→-                                   height: "3.44287px"
+   430→+                                   animationDelay: "3.8169156081703863s"
+   431→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   432→+                                   borderRadius: 9999
+   433→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   434→-                                   animation-delay: "2.48505s"
+   435→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   436→-                                   background-position-x: "initial"
+   437→-                                   background-position-y: "initial"
+   438→-                                   background-size: "initial"
+   439→-                                   background-repeat: "initial"
+   440→-                                   background-attachment: "initial"
+   441→-                                   background-origin: "initial"
+   442→-                                   background-clip: "initial"
+   443→-                                   background-color: "initial"
+   444→-                                   border-top-left-radius: "9999px"
+   445→-                                   border-top-right-radius: "9999px"
+   446→-                                   border-bottom-right-radius: "9999px"
+   447→-                                   border-bottom-left-radius: "9999px"
+   448→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   449→                                  }}
+   450→                                >
+   451→                                <span
+   452→                                  className="absolute animate-twinkle"
+   453→                                  style={{
+   454→+                                   top: "35.33446340182507%"
+   455→-                                   top: "79.4255%"
+   456→+                                   left: "12.542689069215262%"
+   457→-                                   left: "12.49%"
+   458→+                                   width: 2.9049879348688075
+   459→-                                   width: "3.81759px"
+   460→+                                   height: 2.9049879348688075
+   461→-                                   height: "3.81759px"
+   462→+                                   animationDelay: "1.5945837724195644s"
+   463→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   464→+                                   borderRadius: 9999
+   465→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   466→-                                   animation-delay: "1.15881s"
+   467→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   468→-                                   background-position-x: "initial"
+   469→-                                   background-position-y: "initial"
+   470→-                                   background-size: "initial"
+   471→-                                   background-repeat: "initial"
+   472→-                                   background-attachment: "initial"
+   473→-                                   background-origin: "initial"
+   474→-                                   background-clip: "initial"
+   475→-                                   background-color: "initial"
+   476→-                                   border-top-left-radius: "9999px"
+   477→-                                   border-top-right-radius: "9999px"
+   478→-                                   border-bottom-right-radius: "9999px"
+   479→-                                   border-bottom-left-radius: "9999px"
+   480→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   481→                                  }}
+   482→                                >
+   483→                                <span
+   484→                                  className="absolute animate-twinkle"
+   485→                                  style={{
+   486→+                                   top: "44.75855095252639%"
+   487→-                                   top: "11.3787%"
+   488→+                                   left: "82.46143489325615%"
+   489→-                                   left: "77.1657%"
+   490→+                                   width: 4.1435336295216985
+   491→-                                   width: "4.15806px"
+   492→+                                   height: 4.1435336295216985
+   493→-                                   height: "4.15806px"
+   494→+                                   animationDelay: "0.05855344739405899s"
+   495→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   496→+                                   borderRadius: 9999
+   497→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   498→-                                   animation-delay: "2.10017s"
+   499→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   500→-                                   background-position-x: "initial"
+   501→-                                   background-position-y: "initial"
+   502→-                                   background-size: "initial"
+   503→-                                   background-repeat: "initial"
+   504→-                                   background-attachment: "initial"
+   505→-                                   background-origin: "initial"
+   506→-                                   background-clip: "initial"
+   507→-                                   background-color: "initial"
+   508→-                                   border-top-left-radius: "9999px"
+   509→-                                   border-top-right-radius: "9999px"
+   510→-                                   border-bottom-right-radius: "9999px"
+   511→-                                   border-bottom-left-radius: "9999px"
+   512→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   513→                                  }}
+   514→                                >
+   515→                                <span
+   516→                                  className="absolute animate-twinkle"
+   517→                                  style={{
+   518→+                                   top: "90.0252989447289%"
+   519→-                                   top: "52.788%"
+   520→+                                   left: "98.04494591433851%"
+   521→-                                   left: "95.9442%"
+   522→+                                   width: 3.7506799555754666
+   523→-                                   width: "3.39594px"
+   524→+                                   height: 3.7506799555754666
+   525→-                                   height: "3.39594px"
+   526→+                                   animationDelay: "2.5409169701901817s"
+   527→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   528→+                                   borderRadius: 9999
+   529→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   530→-                                   animation-delay: "2.62827s"
+   531→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   532→-                                   background-position-x: "initial"
+   533→-                                   background-position-y: "initial"
+   534→-                                   background-size: "initial"
+   535→-                                   background-repeat: "initial"
+   536→-                                   background-attachment: "initial"
+   537→-                                   background-origin: "initial"
+   538→-                                   background-clip: "initial"
+   539→-                                   background-color: "initial"
+   540→-                                   border-top-left-radius: "9999px"
+   541→-                                   border-top-right-radius: "9999px"
+   542→-                                   border-bottom-right-radius: "9999px"
+   543→-                                   border-bottom-left-radius: "9999px"
+   544→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   545→                                  }}
+   546→                                >
+   547→                                <span
+   548→                                  className="absolute animate-twinkle"
+   549→                                  style={{
+   550→+                                   top: "2.300235259345851%"
+   551→-                                   top: "8.79682%"
+   552→+                                   left: "36.113506997308754%"
+   553→-                                   left: "79.4439%"
+   554→+                                   width: 3.261878425558225
+   555→-                                   width: "4.91731px"
+   556→+                                   height: 3.261878425558225
+   557→-                                   height: "4.91731px"
+   558→+                                   animationDelay: "0.4784639979178684s"
+   559→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   560→+                                   borderRadius: 9999
+   561→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   562→-                                   animation-delay: "0.618813s"
+   563→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   564→-                                   background-position-x: "initial"
+   565→-                                   background-position-y: "initial"
+   566→-                                   background-size: "initial"
+   567→-                                   background-repeat: "initial"
+   568→-                                   background-attachment: "initial"
+   569→-                                   background-origin: "initial"
+   570→-                                   background-clip: "initial"
+   571→-                                   background-color: "initial"
+   572→-                                   border-top-left-radius: "9999px"
+   573→-                                   border-top-right-radius: "9999px"
+   574→-                                   border-bottom-right-radius: "9999px"
+   575→-                                   border-bottom-left-radius: "9999px"
+   576→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   577→                                  }}
+   578→                                >
+   579→                                <span
+   580→                                  className="absolute animate-twinkle"
+   581→                                  style={{
+   582→+                                   top: "4.0085573603423015%"
+   583→-                                   top: "36.7319%"
+   584→+                                   left: "93.75861438538345%"
+   585→-                                   left: "24.6034%"
+   586→+                                   width: 3.6339527993928202
+   587→-                                   width: "4.12068px"
+   588→+                                   height: 3.6339527993928202
+   589→-                                   height: "4.12068px"
+   590→+                                   animationDelay: "0.43702164413133726s"
+   591→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   592→+                                   borderRadius: 9999
+   593→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   594→-                                   animation-delay: "1.58599s"
+   595→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   596→-                                   background-position-x: "initial"
+   597→-                                   background-position-y: "initial"
+   598→-                                   background-size: "initial"
+   599→-                                   background-repeat: "initial"
+   600→-                                   background-attachment: "initial"
+   601→-                                   background-origin: "initial"
+   602→-                                   background-clip: "initial"
+   603→-                                   background-color: "initial"
+   604→-                                   border-top-left-radius: "9999px"
+   605→-                                   border-top-right-radius: "9999px"
+   606→-                                   border-bottom-right-radius: "9999px"
+   607→-                                   border-bottom-left-radius: "9999px"
+   608→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   609→                                  }}
+   610→                                >
+   611→                                <span
+   612→                                  className="absolute animate-twinkle"
+   613→                                  style={{
+   614→+                                   top: "62.433104958724584%"
+   615→-                                   top: "71.864%"
+   616→+                                   left: "40.49432662455851%"
+   617→-                                   left: "41.0837%"
+   618→+                                   width: 4.969975616768538
+   619→-                                   width: "4.23333px"
+   620→+                                   height: 4.969975616768538
+   621→-                                   height: "4.23333px"
+   622→+                                   animationDelay: "0.8706924955501383s"
+   623→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   624→+                                   borderRadius: 9999
+   625→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   626→-                                   animation-delay: "1.86178s"
+   627→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   628→-                                   background-position-x: "initial"
+   629→-                                   background-position-y: "initial"
+   630→-                                   background-size: "initial"
+   631→-                                   background-repeat: "initial"
+   632→-                                   background-attachment: "initial"
+   633→-                                   background-origin: "initial"
+   634→-                                   background-clip: "initial"
+   635→-                                   background-color: "initial"
+   636→-                                   border-top-left-radius: "9999px"
+   637→-                                   border-top-right-radius: "9999px"
+   638→-                                   border-bottom-right-radius: "9999px"
+   639→-                                   border-bottom-left-radius: "9999px"
+   640→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   641→                                  }}
+   642→                                >
+   643→                                <span
+   644→                                  className="absolute animate-twinkle"
+   645→                                  style={{
+   646→+                                   top: "27.952788435266452%"
+   647→-                                   top: "60.9387%"
+   648→+                                   left: "4.468594249394053%"
+   649→-                                   left: "22.2703%"
+   650→+                                   width: 2.6627758586544106
+   651→-                                   width: "2.43065px"
+   652→+                                   height: 2.6627758586544106
+   653→-                                   height: "2.43065px"
+   654→+                                   animationDelay: "3.514892945312661s"
+   655→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   656→+                                   borderRadius: 9999
+   657→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   658→-                                   animation-delay: "1.14899s"
+   659→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   660→-                                   background-position-x: "initial"
+   661→-                                   background-position-y: "initial"
+   662→-                                   background-size: "initial"
+   663→-                                   background-repeat: "initial"
+   664→-                                   background-attachment: "initial"
+   665→-                                   background-origin: "initial"
+   666→-                                   background-clip: "initial"
+   667→-                                   background-color: "initial"
+   668→-                                   border-top-left-radius: "9999px"
+   669→-                                   border-top-right-radius: "9999px"
+   670→-                                   border-bottom-right-radius: "9999px"
+   671→-                                   border-bottom-left-radius: "9999px"
+   672→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   673→                                  }}
+   674→                                >
+   675→                                <span
+   676→                                  className="absolute animate-twinkle"
+   677→                                  style={{
+   678→+                                   top: "14.349918666090755%"
+   679→-                                   top: "9.38531%"
+   680→+                                   left: "4.543427685263901%"
+   681→-                                   left: "14.1799%"
+   682→+                                   width: 2.7029951203411207
+   683→-                                   width: "4.11443px"
+   684→+                                   height: 2.7029951203411207
+   685→-                                   height: "4.11443px"
+   686→+                                   animationDelay: "1.7778344340002588s"
+   687→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   688→+                                   borderRadius: 9999
+   689→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   690→-                                   animation-delay: "2.57808s"
+   691→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   692→-                                   background-position-x: "initial"
+   693→-                                   background-position-y: "initial"
+   694→-                                   background-size: "initial"
+   695→-                                   background-repeat: "initial"
+   696→-                                   background-attachment: "initial"
+   697→-                                   background-origin: "initial"
+   698→-                                   background-clip: "initial"
+   699→-                                   background-color: "initial"
+   700→-                                   border-top-left-radius: "9999px"
+   701→-                                   border-top-right-radius: "9999px"
+   702→-                                   border-bottom-right-radius: "9999px"
+   703→-                                   border-bottom-left-radius: "9999px"
+   704→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   705→                                  }}
+   706→                                >
+   707→                                <span
+   708→                                  className="absolute animate-twinkle"
+   709→                                  style={{
+   710→+                                   top: "81.34441837522124%"
+   711→-                                   top: "17.5633%"
+   712→+                                   left: "37.38610487144543%"
+   713→-                                   left: "33.0872%"
+   714→+                                   width: 3.027512012849382
+   715→-                                   width: "3.92602px"
+   716→+                                   height: 3.027512012849382
+   717→-                                   height: "3.92602px"
+   718→+                                   animationDelay: "3.7289154742390203s"
+   719→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   720→+                                   borderRadius: 9999
+   721→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   722→-                                   animation-delay: "0.976691s"
+   723→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   724→-                                   background-position-x: "initial"
+   725→-                                   background-position-y: "initial"
+   726→-                                   background-size: "initial"
+   727→-                                   background-repeat: "initial"
+   728→-                                   background-attachment: "initial"
+   729→-                                   background-origin: "initial"
+   730→-                                   background-clip: "initial"
+   731→-                                   background-color: "initial"
+   732→-                                   border-top-left-radius: "9999px"
+   733→-                                   border-top-right-radius: "9999px"
+   734→-                                   border-bottom-right-radius: "9999px"
+   735→-                                   border-bottom-left-radius: "9999px"
+   736→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   737→                                  }}
+   738→                                >
+   739→                                <span
+   740→                                  className="absolute animate-twinkle"
+   741→                                  style={{
+   742→+                                   top: "89.14367974918545%"
+   743→-                                   top: "12.7846%"
+   744→+                                   left: "96.86946856442661%"
+   745→-                                   left: "78.2917%"
+   746→+                                   width: 2.805656697030279
+   747→-                                   width: "2.84014px"
+   748→+                                   height: 2.805656697030279
+   749→-                                   height: "2.84014px"
+   750→+                                   animationDelay: "0.9053277742317074s"
+   751→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   752→+                                   borderRadius: 9999
+   753→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   754→-                                   animation-delay: "3.18718s"
+   755→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   756→-                                   background-position-x: "initial"
+   757→-                                   background-position-y: "initial"
+   758→-                                   background-size: "initial"
+   759→-                                   background-repeat: "initial"
+   760→-                                   background-attachment: "initial"
+   761→-                                   background-origin: "initial"
+   762→-                                   background-clip: "initial"
+   763→-                                   background-color: "initial"
+   764→-                                   border-top-left-radius: "9999px"
+   765→-                                   border-top-right-radius: "9999px"
+   766→-                                   border-bottom-right-radius: "9999px"
+   767→-                                   border-bottom-left-radius: "9999px"
+   768→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   769→                                  }}
+   770→                                >
+   771→                                <span
+   772→                                  className="absolute animate-twinkle"
+   773→                                  style={{
+   774→+                                   top: "5.662299884864586%"
+   775→-                                   top: "70.3903%"
+   776→+                                   left: "37.949736145878646%"
+   777→-                                   left: "37.2044%"
+   778→+                                   width: 3.213775986169571
+   779→-                                   width: "4.99666px"
+   780→+                                   height: 3.213775986169571
+   781→-                                   height: "4.99666px"
+   782→+                                   animationDelay: "1.8599350146428s"
+   783→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   784→+                                   borderRadius: 9999
+   785→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   786→-                                   animation-delay: "2.91774s"
+   787→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   788→-                                   background-position-x: "initial"
+   789→-                                   background-position-y: "initial"
+   790→-                                   background-size: "initial"
+   791→-                                   background-repeat: "initial"
+   792→-                                   background-attachment: "initial"
+   793→-                                   background-origin: "initial"
+   794→-                                   background-clip: "initial"
+   795→-                                   background-color: "initial"
+   796→-                                   border-top-left-radius: "9999px"
+   797→-                                   border-top-right-radius: "9999px"
+   798→-                                   border-bottom-right-radius: "9999px"
+   799→-                                   border-bottom-left-radius: "9999px"
+   800→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   801→                                  }}
+   802→                                >
+   803→                                <span
+   804→                                  className="absolute animate-twinkle"
+   805→                                  style={{
+   806→+                                   top: "62.52989198709918%"
+   807→-                                   top: "2.41708%"
+   808→+                                   left: "82.12024972856337%"
+   809→-                                   left: "90.9521%"
+   810→+                                   width: 2.5511154172052697
+   811→-                                   width: "2.80362px"
+   812→+                                   height: 2.5511154172052697
+   813→-                                   height: "2.80362px"
+   814→+                                   animationDelay: "2.6347492259350136s"
+   815→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   816→+                                   borderRadius: 9999
+   817→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   818→-                                   animation-delay: "3.42749s"
+   819→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   820→-                                   background-position-x: "initial"
+   821→-                                   background-position-y: "initial"
+   822→-                                   background-size: "initial"
+   823→-                                   background-repeat: "initial"
+   824→-                                   background-attachment: "initial"
+   825→-                                   background-origin: "initial"
+   826→-                                   background-clip: "initial"
+   827→-                                   background-color: "initial"
+   828→-                                   border-top-left-radius: "9999px"
+   829→-                                   border-top-right-radius: "9999px"
+   830→-                                   border-bottom-right-radius: "9999px"
+   831→-                                   border-bottom-left-radius: "9999px"
+   832→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   833→                                  }}
+   834→                                >
+   835→                                <span
+   836→                                  className="absolute animate-twinkle"
+   837→                                  style={{
+   838→+                                   top: "4.1394490737632905%"
+   839→-                                   top: "73.7073%"
+   840→+                                   left: "49.33675494831641%"
+   841→-                                   left: "89.1052%"
+   842→+                                   width: 4.325134462532084
+   843→-                                   width: "3.91115px"
+   844→+                                   height: 4.325134462532084
+   845→-                                   height: "3.91115px"
+   846→+                                   animationDelay: "1.182537428035269s"
+   847→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+   848→+                                   borderRadius: 9999
+   849→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+   850→-                                   animation-delay: "0.987991s"
+   851→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+   852→-                                   background-position-x: "initial"
+   853→-                                   background-position-y: "initial"
+   854→-                                   background-size: "initial"
+   855→-                                   background-repeat: "initial"
+   856→-                                   background-attachment: "initial"
+   857→-                                   background-origin: "initial"
+   858→-                                   background-clip: "initial"
+   859→-                                   background-color: "initial"
+   860→-                                   border-top-left-radius: "9999px"
+   861→-                                   border-top-right-radius: "9999px"
+   862→-                                   border-bottom-right-radius: "9999px"
+   863→-                                   border-bottom-left-radius: "9999px"
+   864→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+   865→                                  }}
+   866→                                >
+   867→                            <FloatingGoldParticles count={26}>
+   868→                              <div className="pointer-ev...">
+   869→                                <motion.span className="absolute r..." style={{left:"25.0...", ...}} ...>
+   870→                                  <span
+   871→                                    className="absolute rounded-full"
+   872→                                    style={{
+   873→+                                     left: "25.07363952660462%"
+   874→-                                     left: "29.7349%"
+   875→+                                     bottom: -20
+   876→-                                     bottom: "-20px"
+   877→+                                     width: 11.92669861387514
+   878→-                                     width: "9.28046px"
+   879→+                                     height: 11.92669861387514
+   880→-                                     height: "9.28046px"
+   881→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+   882→+                                     opacity: 0
+   883→-                                     opacity: "0"
+   884→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+   885→+                                     transform: "none"
+   886→-                                     transform: "none"
+   887→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+   888→-                                     background-position-x: "initial"
+   889→-                                     background-position-y: "initial"
+   890→-                                     background-size: "initial"
+   891→-                                     background-repeat: "initial"
+   892→-                                     background-attachment: "initial"
+   893→-                                     background-origin: "initial"
+   894→-                                     background-clip: "initial"
+   895→-                                     background-color: "initial"
+   896→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+   897→                                    }}
+   898→                                    ref={function useMotionRef.useCallback}
+   899→                                  >
+   900→                                <motion.span className="absolute r..." style={{left:"95.0...", ...}} ...>
+   901→                                  <span
+   902→                                    className="absolute rounded-full"
+   903→                                    style={{
+   904→+                                     left: "95.02016660331336%"
+   905→-                                     left: "1.1025%"
+   906→+                                     bottom: -20
+   907→-                                     bottom: "-20px"
+   908→+                                     width: 10.311964630201263
+   909→-                                     width: "9.57718px"
+   910→+                                     height: 10.311964630201263
+   911→-                                     height: "9.57718px"
+   912→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+   913→+                                     opacity: 0
+   914→-                                     opacity: "0"
+   915→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+   916→+                                     transform: "none"
+   917→-                                     transform: "none"
+   918→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+   919→-                                     background-position-x: "initial"
+   920→-                                     background-position-y: "initial"
+   921→-                                     background-size: "initial"
+   922→-                                     background-repeat: "initial"
+   923→-                                     background-attachment: "initial"
+   924→-                                     background-origin: "initial"
+   925→-                                     background-clip: "initial"
+   926→-                                     background-color: "initial"
+   927→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+   928→                                    }}
+   929→                                    ref={function useMotionRef.useCallback}
+   930→                                  >
+   931→                                <motion.span className="absolute r..." style={{left:"33.3...", ...}} ...>
+   932→                                  <span
+   933→                                    className="absolute rounded-full"
+   934→                                    style={{
+   935→+                                     left: "33.39493203233659%"
+   936→-                                     left: "9.42727%"
+   937→+                                     bottom: -20
+   938→-                                     bottom: "-20px"
+   939→+                                     width: 6.346679481655367
+   940→-                                     width: "10.1558px"
+   941→+                                     height: 6.346679481655367
+   942→-                                     height: "10.1558px"
+   943→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+   944→+                                     opacity: 0
+   945→-                                     opacity: "0"
+   946→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+   947→+                                     transform: "none"
+   948→-                                     transform: "none"
+   949→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+   950→-                                     background-position-x: "initial"
+   951→-                                     background-position-y: "initial"
+   952→-                                     background-size: "initial"
+   953→-                                     background-repeat: "initial"
+   954→-                                     background-attachment: "initial"
+   955→-                                     background-origin: "initial"
+   956→-                                     background-clip: "initial"
+   957→-                                     background-color: "initial"
+   958→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+   959→                                    }}
+   960→                                    ref={function useMotionRef.useCallback}
+   961→                                  >
+   962→                                <motion.span className="absolute r..." style={{left:"2.48...", ...}} ...>
+   963→                                  <span
+   964→                                    className="absolute rounded-full"
+   965→                                    style={{
+   966→+                                     left: "2.4842997135642197%"
+   967→-                                     left: "47.0468%"
+   968→+                                     bottom: -20
+   969→-                                     bottom: "-20px"
+   970→+                                     width: 4.965949972058176
+   971→-                                     width: "10.7536px"
+   972→+                                     height: 4.965949972058176
+   973→-                                     height: "10.7536px"
+   974→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+   975→+                                     opacity: 0
+   976→-                                     opacity: "0"
+   977→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+   978→+                                     transform: "none"
+   979→-                                     transform: "none"
+   980→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+   981→-                                     background-position-x: "initial"
+   982→-                                     background-position-y: "initial"
+   983→-                                     background-size: "initial"
+   984→-                                     background-repeat: "initial"
+   985→-                                     background-attachment: "initial"
+   986→-                                     background-origin: "initial"
+   987→-                                     background-clip: "initial"
+   988→-                                     background-color: "initial"
+   989→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+   990→                                    }}
+   991→                                    ref={function useMotionRef.useCallback}
+   992→                                  >
+   993→                                <motion.span className="absolute r..." style={{left:"6.86...", ...}} ...>
+   994→                                  <span
+   995→                                    className="absolute rounded-full"
+   996→                                    style={{
+   997→+                                     left: "6.867692694583094%"
+   998→-                                     left: "71.2483%"
+   999→+                                     bottom: -20
+  1000→-                                     bottom: "-20px"
+  1001→+                                     width: 13.65247728658657
+  1002→-                                     width: "13.8447px"
+  1003→+                                     height: 13.65247728658657
+  1004→-                                     height: "13.8447px"
+  1005→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1006→+                                     opacity: 0
+  1007→-                                     opacity: "0"
+  1008→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1009→+                                     transform: "none"
+  1010→-                                     transform: "none"
+  1011→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1012→-                                     background-position-x: "initial"
+  1013→-                                     background-position-y: "initial"
+  1014→-                                     background-size: "initial"
+  1015→-                                     background-repeat: "initial"
+  1016→-                                     background-attachment: "initial"
+  1017→-                                     background-origin: "initial"
+  1018→-                                     background-clip: "initial"
+  1019→-                                     background-color: "initial"
+  1020→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1021→                                    }}
+  1022→                                    ref={function useMotionRef.useCallback}
+  1023→                                  >
+  1024→                                <motion.span className="absolute r..." style={{left:"19.6...", ...}} ...>
+  1025→                                  <span
+  1026→                                    className="absolute rounded-full"
+  1027→                                    style={{
+  1028→+                                     left: "19.635731856157534%"
+  1029→-                                     left: "45.4311%"
+  1030→+                                     bottom: -20
+  1031→-                                     bottom: "-20px"
+  1032→+                                     width: 11.743695722690074
+  1033→-                                     width: "8.69744px"
+  1034→+                                     height: 11.743695722690074
+  1035→-                                     height: "8.69744px"
+  1036→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1037→+                                     opacity: 0
+  1038→-                                     opacity: "0"
+  1039→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1040→+                                     transform: "none"
+  1041→-                                     transform: "none"
+  1042→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1043→-                                     background-position-x: "initial"
+  1044→-                                     background-position-y: "initial"
+  1045→-                                     background-size: "initial"
+  1046→-                                     background-repeat: "initial"
+  1047→-                                     background-attachment: "initial"
+  1048→-                                     background-origin: "initial"
+  1049→-                                     background-clip: "initial"
+  1050→-                                     background-color: "initial"
+  1051→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1052→                                    }}
+  1053→                                    ref={function useMotionRef.useCallback}
+  1054→                                  >
+  1055→                                <motion.span className="absolute r..." style={{left:"71.2...", ...}} ...>
+  1056→                                  <span
+  1057→                                    className="absolute rounded-full"
+  1058→                                    style={{
+  1059→+                                     left: "71.25179875102758%"
+  1060→-                                     left: "38.5276%"
+  1061→+                                     bottom: -20
+  1062→-                                     bottom: "-20px"
+  1063→+                                     width: 5.545802956926798
+  1064→-                                     width: "5.35401px"
+  1065→+                                     height: 5.545802956926798
+  1066→-                                     height: "5.35401px"
+  1067→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1068→+                                     opacity: 0
+  1069→-                                     opacity: "0"
+  1070→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1071→+                                     transform: "none"
+  1072→-                                     transform: "none"
+  1073→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1074→-                                     background-position-x: "initial"
+  1075→-                                     background-position-y: "initial"
+  1076→-                                     background-size: "initial"
+  1077→-                                     background-repeat: "initial"
+  1078→-                                     background-attachment: "initial"
+  1079→-                                     background-origin: "initial"
+  1080→-                                     background-clip: "initial"
+  1081→-                                     background-color: "initial"
+  1082→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1083→                                    }}
+  1084→                                    ref={function useMotionRef.useCallback}
+  1085→                                  >
+  1086→                                <motion.span className="absolute r..." style={{left:"56.3...", ...}} ...>
+  1087→                                  <span
+  1088→                                    className="absolute rounded-full"
+  1089→                                    style={{
+  1090→+                                     left: "56.380496886831644%"
+  1091→-                                     left: "93.6997%"
+  1092→+                                     bottom: -20
+  1093→-                                     bottom: "-20px"
+  1094→+                                     width: 4.705504019463024
+  1095→-                                     width: "5.77005px"
+  1096→+                                     height: 4.705504019463024
+  1097→-                                     height: "5.77005px"
+  1098→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1099→+                                     opacity: 0
+  1100→-                                     opacity: "0"
+  1101→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1102→+                                     transform: "none"
+  1103→-                                     transform: "none"
+  1104→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1105→-                                     background-position-x: "initial"
+  1106→-                                     background-position-y: "initial"
+  1107→-                                     background-size: "initial"
+  1108→-                                     background-repeat: "initial"
+  1109→-                                     background-attachment: "initial"
+  1110→-                                     background-origin: "initial"
+  1111→-                                     background-clip: "initial"
+  1112→-                                     background-color: "initial"
+  1113→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1114→                                    }}
+  1115→                                    ref={function useMotionRef.useCallback}
+  1116→                                  >
+  1117→                                <motion.span className="absolute r..." style={{left:"63.3...", ...}} ...>
+  1118→                                  <span
+  1119→                                    className="absolute rounded-full"
+  1120→                                    style={{
+  1121→+                                     left: "63.30696184636923%"
+  1122→-                                     left: "34.1176%"
+  1123→+                                     bottom: -20
+  1124→-                                     bottom: "-20px"
+  1125→+                                     width: 11.225771544647728
+  1126→-                                     width: "8.96431px"
+  1127→+                                     height: 11.225771544647728
+  1128→-                                     height: "8.96431px"
+  1129→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1130→+                                     opacity: 0
+  1131→-                                     opacity: "0"
+  1132→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1133→+                                     transform: "none"
+  1134→-                                     transform: "none"
+  1135→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1136→-                                     background-position-x: "initial"
+  1137→-                                     background-position-y: "initial"
+  1138→-                                     background-size: "initial"
+  1139→-                                     background-repeat: "initial"
+  1140→-                                     background-attachment: "initial"
+  1141→-                                     background-origin: "initial"
+  1142→-                                     background-clip: "initial"
+  1143→-                                     background-color: "initial"
+  1144→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1145→                                    }}
+  1146→                                    ref={function useMotionRef.useCallback}
+  1147→                                  >
+  1148→                                <motion.span className="absolute r..." style={{left:"74.0...", ...}} ...>
+  1149→                                  <span
+  1150→                                    className="absolute rounded-full"
+  1151→                                    style={{
+  1152→+                                     left: "74.07483047950072%"
+  1153→-                                     left: "98.7469%"
+  1154→+                                     bottom: -20
+  1155→-                                     bottom: "-20px"
+  1156→+                                     width: 12.785720389205752
+  1157→-                                     width: "13.7353px"
+  1158→+                                     height: 12.785720389205752
+  1159→-                                     height: "13.7353px"
+  1160→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1161→+                                     opacity: 0
+  1162→-                                     opacity: "0"
+  1163→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1164→+                                     transform: "none"
+  1165→-                                     transform: "none"
+  1166→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1167→-                                     background-position-x: "initial"
+  1168→-                                     background-position-y: "initial"
+  1169→-                                     background-size: "initial"
+  1170→-                                     background-repeat: "initial"
+  1171→-                                     background-attachment: "initial"
+  1172→-                                     background-origin: "initial"
+  1173→-                                     background-clip: "initial"
+  1174→-                                     background-color: "initial"
+  1175→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1176→                                    }}
+  1177→                                    ref={function useMotionRef.useCallback}
+  1178→                                  >
+  1179→                                <motion.span className="absolute r..." style={{left:"79.9...", ...}} ...>
+  1180→                                  <span
+  1181→                                    className="absolute rounded-full"
+  1182→                                    style={{
+  1183→+                                     left: "79.99346930430153%"
+  1184→-                                     left: "93.6073%"
+  1185→+                                     bottom: -20
+  1186→-                                     bottom: "-20px"
+  1187→+                                     width: 5.4419368292841455
+  1188→-                                     width: "5.93516px"
+  1189→+                                     height: 5.4419368292841455
+  1190→-                                     height: "5.93516px"
+  1191→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1192→+                                     opacity: 0
+  1193→-                                     opacity: "0"
+  1194→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1195→+                                     transform: "none"
+  1196→-                                     transform: "none"
+  1197→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1198→-                                     background-position-x: "initial"
+  1199→-                                     background-position-y: "initial"
+  1200→-                                     background-size: "initial"
+  1201→-                                     background-repeat: "initial"
+  1202→-                                     background-attachment: "initial"
+  1203→-                                     background-origin: "initial"
+  1204→-                                     background-clip: "initial"
+  1205→-                                     background-color: "initial"
+  1206→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1207→                                    }}
+  1208→                                    ref={function useMotionRef.useCallback}
+  1209→                                  >
+  1210→                                <motion.span className="absolute r..." style={{left:"99.1...", ...}} ...>
+  1211→                                  <span
+  1212→                                    className="absolute rounded-full"
+  1213→                                    style={{
+  1214→+                                     left: "99.14163226795394%"
+  1215→-                                     left: "99.2985%"
+  1216→+                                     bottom: -20
+  1217→-                                     bottom: "-20px"
+  1218→+                                     width: 11.88181280657884
+  1219→-                                     width: "7.85971px"
+  1220→+                                     height: 11.88181280657884
+  1221→-                                     height: "7.85971px"
+  1222→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1223→+                                     opacity: 0
+  1224→-                                     opacity: "0"
+  1225→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1226→+                                     transform: "none"
+  1227→-                                     transform: "none"
+  1228→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1229→-                                     background-position-x: "initial"
+  1230→-                                     background-position-y: "initial"
+  1231→-                                     background-size: "initial"
+  1232→-                                     background-repeat: "initial"
+  1233→-                                     background-attachment: "initial"
+  1234→-                                     background-origin: "initial"
+  1235→-                                     background-clip: "initial"
+  1236→-                                     background-color: "initial"
+  1237→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1238→                                    }}
+  1239→                                    ref={function useMotionRef.useCallback}
+  1240→                                  >
+  1241→                                <motion.span className="absolute r..." style={{left:"39.2...", ...}} ...>
+  1242→                                  <span
+  1243→                                    className="absolute rounded-full"
+  1244→                                    style={{
+  1245→+                                     left: "39.244833730747764%"
+  1246→-                                     left: "14.6971%"
+  1247→+                                     bottom: -20
+  1248→-                                     bottom: "-20px"
+  1249→+                                     width: 4.091881928248274
+  1250→-                                     width: "4.6463px"
+  1251→+                                     height: 4.091881928248274
+  1252→-                                     height: "4.6463px"
+  1253→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1254→+                                     opacity: 0
+  1255→-                                     opacity: "0"
+  1256→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1257→+                                     transform: "none"
+  1258→-                                     transform: "none"
+  1259→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1260→-                                     background-position-x: "initial"
+  1261→-                                     background-position-y: "initial"
+  1262→-                                     background-size: "initial"
+  1263→-                                     background-repeat: "initial"
+  1264→-                                     background-attachment: "initial"
+  1265→-                                     background-origin: "initial"
+  1266→-                                     background-clip: "initial"
+  1267→-                                     background-color: "initial"
+  1268→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1269→                                    }}
+  1270→                                    ref={function useMotionRef.useCallback}
+  1271→                                  >
+  1272→                                <motion.span className="absolute r..." style={{left:"84.9...", ...}} ...>
+  1273→                                  <span
+  1274→                                    className="absolute rounded-full"
+  1275→                                    style={{
+  1276→+                                     left: "84.99016169823412%"
+  1277→-                                     left: "65.7081%"
+  1278→+                                     bottom: -20
+  1279→-                                     bottom: "-20px"
+  1280→+                                     width: 9.656454024958775
+  1281→-                                     width: "5.87703px"
+  1282→+                                     height: 9.656454024958775
+  1283→-                                     height: "5.87703px"
+  1284→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1285→+                                     opacity: 0
+  1286→-                                     opacity: "0"
+  1287→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1288→+                                     transform: "none"
+  1289→-                                     transform: "none"
+  1290→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1291→-                                     background-position-x: "initial"
+  1292→-                                     background-position-y: "initial"
+  1293→-                                     background-size: "initial"
+  1294→-                                     background-repeat: "initial"
+  1295→-                                     background-attachment: "initial"
+  1296→-                                     background-origin: "initial"
+  1297→-                                     background-clip: "initial"
+  1298→-                                     background-color: "initial"
+  1299→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1300→                                    }}
+  1301→                                    ref={function useMotionRef.useCallback}
+  1302→                                  >
+  1303→                                <motion.span className="absolute r..." style={{left:"67.2...", ...}} ...>
+  1304→                                  <span
+  1305→                                    className="absolute rounded-full"
+  1306→                                    style={{
+  1307→+                                     left: "67.24812813078435%"
+  1308→-                                     left: "16.8083%"
+  1309→+                                     bottom: -20
+  1310→-                                     bottom: "-20px"
+  1311→+                                     width: 12.414335538189833
+  1312→-                                     width: "8.57474px"
+  1313→+                                     height: 12.414335538189833
+  1314→-                                     height: "8.57474px"
+  1315→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1316→+                                     opacity: 0
+  1317→-                                     opacity: "0"
+  1318→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1319→+                                     transform: "none"
+  1320→-                                     transform: "none"
+  1321→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1322→-                                     background-position-x: "initial"
+  1323→-                                     background-position-y: "initial"
+  1324→-                                     background-size: "initial"
+  1325→-                                     background-repeat: "initial"
+  1326→-                                     background-attachment: "initial"
+  1327→-                                     background-origin: "initial"
+  1328→-                                     background-clip: "initial"
+  1329→-                                     background-color: "initial"
+  1330→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1331→                                    }}
+  1332→                                    ref={function useMotionRef.useCallback}
+  1333→                                  >
+  1334→                                <motion.span className="absolute r..." style={{left:"13.8...", ...}} ...>
+  1335→                                  <span
+  1336→                                    className="absolute rounded-full"
+  1337→                                    style={{
+  1338→+                                     left: "13.861803023005425%"
+  1339→-                                     left: "68.6018%"
+  1340→+                                     bottom: -20
+  1341→-                                     bottom: "-20px"
+  1342→+                                     width: 4.093011980077823
+  1343→-                                     width: "5.8534px"
+  1344→+                                     height: 4.093011980077823
+  1345→-                                     height: "5.8534px"
+  1346→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1347→+                                     opacity: 0
+  1348→-                                     opacity: "0"
+  1349→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1350→+                                     transform: "none"
+  1351→-                                     transform: "none"
+  1352→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1353→-                                     background-position-x: "initial"
+  1354→-                                     background-position-y: "initial"
+  1355→-                                     background-size: "initial"
+  1356→-                                     background-repeat: "initial"
+  1357→-                                     background-attachment: "initial"
+  1358→-                                     background-origin: "initial"
+  1359→-                                     background-clip: "initial"
+  1360→-                                     background-color: "initial"
+  1361→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1362→                                    }}
+  1363→                                    ref={function useMotionRef.useCallback}
+  1364→                                  >
+  1365→                                <motion.span className="absolute r..." style={{left:"0.76...", ...}} ...>
+  1366→                                  <span
+  1367→                                    className="absolute rounded-full"
+  1368→                                    style={{
+  1369→+                                     left: "0.7654736781627647%"
+  1370→-                                     left: "33.4252%"
+  1371→+                                     bottom: -20
+  1372→-                                     bottom: "-20px"
+  1373→+                                     width: 7.408367580792973
+  1374→-                                     width: "4.6276px"
+  1375→+                                     height: 7.408367580792973
+  1376→-                                     height: "4.6276px"
+  1377→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1378→+                                     opacity: 0
+  1379→-                                     opacity: "0"
+  1380→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1381→+                                     transform: "none"
+  1382→-                                     transform: "none"
+  1383→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1384→-                                     background-position-x: "initial"
+  1385→-                                     background-position-y: "initial"
+  1386→-                                     background-size: "initial"
+  1387→-                                     background-repeat: "initial"
+  1388→-                                     background-attachment: "initial"
+  1389→-                                     background-origin: "initial"
+  1390→-                                     background-clip: "initial"
+  1391→-                                     background-color: "initial"
+  1392→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1393→                                    }}
+  1394→                                    ref={function useMotionRef.useCallback}
+  1395→                                  >
+  1396→                                <motion.span className="absolute r..." style={{left:"92.9...", ...}} ...>
+  1397→                                  <span
+  1398→                                    className="absolute rounded-full"
+  1399→                                    style={{
+  1400→+                                     left: "92.94407945014098%"
+  1401→-                                     left: "57.1472%"
+  1402→+                                     bottom: -20
+  1403→-                                     bottom: "-20px"
+  1404→+                                     width: 11.941731273422466
+  1405→-                                     width: "10.8721px"
+  1406→+                                     height: 11.941731273422466
+  1407→-                                     height: "10.8721px"
+  1408→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1409→+                                     opacity: 0
+  1410→-                                     opacity: "0"
+  1411→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1412→+                                     transform: "none"
+  1413→-                                     transform: "none"
+  1414→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1415→-                                     background-position-x: "initial"
+  1416→-                                     background-position-y: "initial"
+  1417→-                                     background-size: "initial"
+  1418→-                                     background-repeat: "initial"
+  1419→-                                     background-attachment: "initial"
+  1420→-                                     background-origin: "initial"
+  1421→-                                     background-clip: "initial"
+  1422→-                                     background-color: "initial"
+  1423→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1424→                                    }}
+  1425→                                    ref={function useMotionRef.useCallback}
+  1426→                                  >
+  1427→                                <motion.span className="absolute r..." style={{left:"10.3...", ...}} ...>
+  1428→                                  <span
+  1429→                                    className="absolute rounded-full"
+  1430→                                    style={{
+  1431→+                                     left: "10.366752425879843%"
+  1432→-                                     left: "0.355411%"
+  1433→+                                     bottom: -20
+  1434→-                                     bottom: "-20px"
+  1435→+                                     width: 7.462379961215678
+  1436→-                                     width: "6.13529px"
+  1437→+                                     height: 7.462379961215678
+  1438→-                                     height: "6.13529px"
+  1439→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1440→+                                     opacity: 0
+  1441→-                                     opacity: "0"
+  1442→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1443→+                                     transform: "none"
+  1444→-                                     transform: "none"
+  1445→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1446→-                                     background-position-x: "initial"
+  1447→-                                     background-position-y: "initial"
+  1448→-                                     background-size: "initial"
+  1449→-                                     background-repeat: "initial"
+  1450→-                                     background-attachment: "initial"
+  1451→-                                     background-origin: "initial"
+  1452→-                                     background-clip: "initial"
+  1453→-                                     background-color: "initial"
+  1454→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1455→                                    }}
+  1456→                                    ref={function useMotionRef.useCallback}
+  1457→                                  >
+  1458→                                <motion.span className="absolute r..." style={{left:"19.3...", ...}} ...>
+  1459→                                  <span
+  1460→                                    className="absolute rounded-full"
+  1461→                                    style={{
+  1462→+                                     left: "19.3911536987463%"
+  1463→-                                     left: "42.2425%"
+  1464→+                                     bottom: -20
+  1465→-                                     bottom: "-20px"
+  1466→+                                     width: 11.515806676968996
+  1467→-                                     width: "13.829px"
+  1468→+                                     height: 11.515806676968996
+  1469→-                                     height: "13.829px"
+  1470→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1471→+                                     opacity: 0
+  1472→-                                     opacity: "0"
+  1473→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1474→+                                     transform: "none"
+  1475→-                                     transform: "none"
+  1476→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1477→-                                     background-position-x: "initial"
+  1478→-                                     background-position-y: "initial"
+  1479→-                                     background-size: "initial"
+  1480→-                                     background-repeat: "initial"
+  1481→-                                     background-attachment: "initial"
+  1482→-                                     background-origin: "initial"
+  1483→-                                     background-clip: "initial"
+  1484→-                                     background-color: "initial"
+  1485→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1486→                                    }}
+  1487→                                    ref={function useMotionRef.useCallback}
+  1488→                                  >
+  1489→                                <motion.span className="absolute r..." style={{left:"19.3...", ...}} ...>
+  1490→                                  <span
+  1491→                                    className="absolute rounded-full"
+  1492→                                    style={{
+  1493→+                                     left: "19.319759997650877%"
+  1494→-                                     left: "36.4432%"
+  1495→+                                     bottom: -20
+  1496→-                                     bottom: "-20px"
+  1497→+                                     width: 5.280583526709269
+  1498→-                                     width: "8.91969px"
+  1499→+                                     height: 5.280583526709269
+  1500→-                                     height: "8.91969px"
+  1501→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1502→+                                     opacity: 0
+  1503→-                                     opacity: "0"
+  1504→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1505→+                                     transform: "none"
+  1506→-                                     transform: "none"
+  1507→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1508→-                                     background-position-x: "initial"
+  1509→-                                     background-position-y: "initial"
+  1510→-                                     background-size: "initial"
+  1511→-                                     background-repeat: "initial"
+  1512→-                                     background-attachment: "initial"
+  1513→-                                     background-origin: "initial"
+  1514→-                                     background-clip: "initial"
+  1515→-                                     background-color: "initial"
+  1516→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1517→                                    }}
+  1518→                                    ref={function useMotionRef.useCallback}
+  1519→                                  >
+  1520→                                <motion.span className="absolute r..." style={{left:"84.2...", ...}} ...>
+  1521→                                  <span
+  1522→                                    className="absolute rounded-full"
+  1523→                                    style={{
+  1524→+                                     left: "84.2513159778044%"
+  1525→-                                     left: "45.0862%"
+  1526→+                                     bottom: -20
+  1527→-                                     bottom: "-20px"
+  1528→+                                     width: 12.454080629276595
+  1529→-                                     width: "9.27729px"
+  1530→+                                     height: 12.454080629276595
+  1531→-                                     height: "9.27729px"
+  1532→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1533→+                                     opacity: 0
+  1534→-                                     opacity: "0"
+  1535→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1536→+                                     transform: "none"
+  1537→-                                     transform: "none"
+  1538→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1539→-                                     background-position-x: "initial"
+  1540→-                                     background-position-y: "initial"
+  1541→-                                     background-size: "initial"
+  1542→-                                     background-repeat: "initial"
+  1543→-                                     background-attachment: "initial"
+  1544→-                                     background-origin: "initial"
+  1545→-                                     background-clip: "initial"
+  1546→-                                     background-color: "initial"
+  1547→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1548→                                    }}
+  1549→                                    ref={function useMotionRef.useCallback}
+  1550→                                  >
+  1551→                                <motion.span className="absolute r..." style={{left:"5.99...", ...}} ...>
+  1552→                                  <span
+  1553→                                    className="absolute rounded-full"
+  1554→                                    style={{
+  1555→+                                     left: "5.9966779916558295%"
+  1556→-                                     left: "65.9732%"
+  1557→+                                     bottom: -20
+  1558→-                                     bottom: "-20px"
+  1559→+                                     width: 5.829989070691558
+  1560→-                                     width: "9.21397px"
+  1561→+                                     height: 5.829989070691558
+  1562→-                                     height: "9.21397px"
+  1563→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1564→+                                     opacity: 0
+  1565→-                                     opacity: "0"
+  1566→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1567→+                                     transform: "none"
+  1568→-                                     transform: "none"
+  1569→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1570→-                                     background-position-x: "initial"
+  1571→-                                     background-position-y: "initial"
+  1572→-                                     background-size: "initial"
+  1573→-                                     background-repeat: "initial"
+  1574→-                                     background-attachment: "initial"
+  1575→-                                     background-origin: "initial"
+  1576→-                                     background-clip: "initial"
+  1577→-                                     background-color: "initial"
+  1578→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1579→                                    }}
+  1580→                                    ref={function useMotionRef.useCallback}
+  1581→                                  >
+  1582→                                <motion.span className="absolute r..." style={{left:"73.6...", ...}} ...>
+  1583→                                  <span
+  1584→                                    className="absolute rounded-full"
+  1585→                                    style={{
+  1586→+                                     left: "73.62650084074266%"
+  1587→-                                     left: "33.0809%"
+  1588→+                                     bottom: -20
+  1589→-                                     bottom: "-20px"
+  1590→+                                     width: 5.633741282465735
+  1591→-                                     width: "5.83169px"
+  1592→+                                     height: 5.633741282465735
+  1593→-                                     height: "5.83169px"
+  1594→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1595→+                                     opacity: 0
+  1596→-                                     opacity: "0"
+  1597→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1598→+                                     transform: "none"
+  1599→-                                     transform: "none"
+  1600→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1601→-                                     background-position-x: "initial"
+  1602→-                                     background-position-y: "initial"
+  1603→-                                     background-size: "initial"
+  1604→-                                     background-repeat: "initial"
+  1605→-                                     background-attachment: "initial"
+  1606→-                                     background-origin: "initial"
+  1607→-                                     background-clip: "initial"
+  1608→-                                     background-color: "initial"
+  1609→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1610→                                    }}
+  1611→                                    ref={function useMotionRef.useCallback}
+  1612→                                  >
+  1613→                                <motion.span className="absolute r..." style={{left:"93.4...", ...}} ...>
+  1614→                                  <span
+  1615→                                    className="absolute rounded-full"
+  1616→                                    style={{
+  1617→+                                     left: "93.43928767232761%"
+  1618→-                                     left: "93.0031%"
+  1619→+                                     bottom: -20
+  1620→-                                     bottom: "-20px"
+  1621→+                                     width: 10.187082828994026
+  1622→-                                     width: "6.88998px"
+  1623→+                                     height: 10.187082828994026
+  1624→-                                     height: "6.88998px"
+  1625→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1626→+                                     opacity: 0
+  1627→-                                     opacity: "0"
+  1628→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1629→+                                     transform: "none"
+  1630→-                                     transform: "none"
+  1631→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1632→-                                     background-position-x: "initial"
+  1633→-                                     background-position-y: "initial"
+  1634→-                                     background-size: "initial"
+  1635→-                                     background-repeat: "initial"
+  1636→-                                     background-attachment: "initial"
+  1637→-                                     background-origin: "initial"
+  1638→-                                     background-clip: "initial"
+  1639→-                                     background-color: "initial"
+  1640→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1641→                                    }}
+  1642→                                    ref={function useMotionRef.useCallback}
+  1643→                                  >
+  1644→                                <motion.span className="absolute r..." style={{left:"98.9...", ...}} ...>
+  1645→                                  <span
+  1646→                                    className="absolute rounded-full"
+  1647→                                    style={{
+  1648→+                                     left: "98.92376452000507%"
+  1649→-                                     left: "19.6284%"
+  1650→+                                     bottom: -20
+  1651→-                                     bottom: "-20px"
+  1652→+                                     width: 10.330061939719979
+  1653→-                                     width: "8.51842px"
+  1654→+                                     height: 10.330061939719979
+  1655→-                                     height: "8.51842px"
+  1656→+                                     background: "radial-gradient(circle at 30% 30%, #fff8d6, #f5d061 45%, #c9971f 100%)"
+  1657→+                                     opacity: 0
+  1658→-                                     opacity: "0"
+  1659→+                                     boxShadow: "0 0 12px rgba(245,208,97,0.65)"
+  1660→+                                     transform: "none"
+  1661→-                                     transform: "none"
+  1662→-                                     background-image: "radial-gradient(circle at 30% 30%, rgb(255, 248, 214), rgb(24..."
+  1663→-                                     background-position-x: "initial"
+  1664→-                                     background-position-y: "initial"
+  1665→-                                     background-size: "initial"
+  1666→-                                     background-repeat: "initial"
+  1667→-                                     background-attachment: "initial"
+  1668→-                                     background-origin: "initial"
+  1669→-                                     background-clip: "initial"
+  1670→-                                     background-color: "initial"
+  1671→-                                     box-shadow: "rgba(245, 208, 97, 0.65) 0px 0px 12px"
+  1672→                                    }}
+  1673→                                    ref={function useMotionRef.useCallback}
+  1674→                                  >
+  1675→                            ...
+  1676→                        <Marquee>
+  1677→                        <About>
+  1678→                        <Benefits>
+  1679→                          <section id="manfaat" className="relative o...">
+  1680→                            <div>
+  1681→                            <Twinkles count={20}>
+  1682→                              <div className="pointer-ev...">
+  1683→                                <span
+  1684→                                  className="absolute animate-twinkle"
+  1685→                                  style={{
+  1686→+                                   top: "19.482369567553427%"
+  1687→-                                   top: "97.7411%"
+  1688→+                                   left: "8.945039257792386%"
+  1689→-                                   left: "61.703%"
+  1690→+                                   width: 2.039987060388098
+  1691→-                                   width: "3.7758px"
+  1692→+                                   height: 2.039987060388098
+  1693→-                                   height: "3.7758px"
+  1694→+                                   animationDelay: "1.5269681308809986s"
+  1695→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+  1696→+                                   borderRadius: 9999
+  1697→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+  1698→-                                   animation-delay: "3.92057s"
+  1699→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+  1700→-                                   background-position-x: "initial"
+  1701→-                                   background-position-y: "initial"
+  1702→-                                   background-size: "initial"
+  1703→-                                   background-repeat: "initial"
+  1704→-                                   background-attachment: "initial"
+  1705→-                                   background-origin: "initial"
+  1706→-                                   background-clip: "initial"
+  1707→-                                   background-color: "initial"
+  1708→-                                   border-top-left-radius: "9999px"
+  1709→-                                   border-top-right-radius: "9999px"
+  1710→-                                   border-bottom-right-radius: "9999px"
+  1711→-                                   border-bottom-left-radius: "9999px"
+  1712→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+  1713→                                  }}
+  1714→                                >
+  1715→                                <span
+  1716→                                  className="absolute animate-twinkle"
+  1717→                                  style={{
+  1718→+                                   top: "36.20188223759774%"
+  1719→-                                   top: "2.83195%"
+  1720→+                                   left: "16.420263448048612%"
+  1721→-                                   left: "94.4455%"
+  1722→+                                   width: 2.2991541275549467
+  1723→-                                   width: "2.31246px"
+  1724→+                                   height: 2.2991541275549467
+  1725→-                                   height: "2.31246px"
+  1726→+                                   animationDelay: "3.1883555809160824s"
+  1727→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+  1728→+                                   borderRadius: 9999
+  1729→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+  1730→-                                   animation-delay: "1.67732s"
+  1731→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+  1732→-                                   background-position-x: "initial"
+  1733→-                                   background-position-y: "initial"
+  1734→-                                   background-size: "initial"
+  1735→-                                   background-repeat: "initial"
+  1736→-                                   background-attachment: "initial"
+  1737→-                                   background-origin: "initial"
+  1738→-                                   background-clip: "initial"
+  1739→-                                   background-color: "initial"
+  1740→-                                   border-top-left-radius: "9999px"
+  1741→-                                   border-top-right-radius: "9999px"
+  1742→-                                   border-bottom-right-radius: "9999px"
+  1743→-                                   border-bottom-left-radius: "9999px"
+  1744→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+  1745→                                  }}
+  1746→                                >
+  1747→                                <span
+  1748→                                  className="absolute animate-twinkle"
+  1749→                                  style={{
+  1750→+                                   top: "52.33352121447196%"
+  1751→-                                   top: "24.6854%"
+  1752→+                                   left: "71.40242931955316%"
+  1753→-                                   left: "52.3846%"
+  1754→+                                   width: 3.797996462363151
+  1755→-                                   width: "4.05538px"
+  1756→+                                   height: 3.797996462363151
+  1757→-                                   height: "4.05538px"
+  1758→+                                   animationDelay: "0.9112481046748195s"
+  1759→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+  1760→+                                   borderRadius: 9999
+  1761→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+  1762→-                                   animation-delay: "0.267508s"
+  1763→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+  1764→-                                   background-position-x: "initial"
+  1765→-                                   background-position-y: "initial"
+  1766→-                                   background-size: "initial"
+  1767→-                                   background-repeat: "initial"
+  1768→-                                   background-attachment: "initial"
+  1769→-                                   background-origin: "initial"
+  1770→-                                   background-clip: "initial"
+  1771→-                                   background-color: "initial"
+  1772→-                                   border-top-left-radius: "9999px"
+  1773→-                                   border-top-right-radius: "9999px"
+  1774→-                                   border-bottom-right-radius: "9999px"
+  1775→-                                   border-bottom-left-radius: "9999px"
+  1776→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+  1777→                                  }}
+  1778→                                >
+  1779→                                <span
+  1780→                                  className="absolute animate-twinkle"
+  1781→                                  style={{
+  1782→+                                   top: "53.942483352400075%"
+  1783→-                                   top: "26.236%"
+  1784→+                                   left: "51.45267711811145%"
+  1785→-                                   left: "35.5043%"
+  1786→+                                   width: 4.480193965767138
+  1787→-                                   width: "2.57768px"
+  1788→+                                   height: 4.480193965767138
+  1789→-                                   height: "2.57768px"
+  1790→+                                   animationDelay: "1.7938715729222419s"
+  1791→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+  1792→+                                   borderRadius: 9999
+  1793→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+  1794→-                                   animation-delay: "2.92083s"
+  1795→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+  1796→-                                   background-position-x: "initial"
+  1797→-                                   background-position-y: "initial"
+  1798→-                                   background-size: "initial"
+  1799→-                                   background-repeat: "initial"
+  1800→-                                   background-attachment: "initial"
+  1801→-                                   background-origin: "initial"
+  1802→-                                   background-clip: "initial"
+  1803→-                                   background-color: "initial"
+  1804→-                                   border-top-left-radius: "9999px"
+  1805→-                                   border-top-right-radius: "9999px"
+  1806→-                                   border-bottom-right-radius: "9999px"
+  1807→-                                   border-bottom-left-radius: "9999px"
+  1808→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+  1809→                                  }}
+  1810→                                >
+  1811→                                <span
+  1812→                                  className="absolute animate-twinkle"
+  1813→                                  style={{
+  1814→+                                   top: "48.906883512497046%"
+  1815→-                                   top: "42.4002%"
+  1816→+                                   left: "64.33245908409317%"
+  1817→-                                   left: "32.7913%"
+  1818→+                                   width: 2.9630030471798876
+  1819→-                                   width: "2.28242px"
+  1820→+                                   height: 2.9630030471798876
+  1821→-                                   height: "2.28242px"
+  1822→+                                   animationDelay: "3.604358104757686s"
+  1823→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+  1824→+                                   borderRadius: 9999
+  1825→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+  1826→-                                   animation-delay: "3.78952s"
+  1827→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+  1828→-                                   background-position-x: "initial"
+  1829→-                                   background-position-y: "initial"
+  1830→-                                   background-size: "initial"
+  1831→-                                   background-repeat: "initial"
+  1832→-                                   background-attachment: "initial"
+  1833→-                                   background-origin: "initial"
+  1834→-                                   background-clip: "initial"
+  1835→-                                   background-color: "initial"
+  1836→-                                   border-top-left-radius: "9999px"
+  1837→-                                   border-top-right-radius: "9999px"
+  1838→-                                   border-bottom-right-radius: "9999px"
+  1839→-                                   border-bottom-left-radius: "9999px"
+  1840→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+  1841→                                  }}
+  1842→                                >
+  1843→                                <span
+  1844→                                  className="absolute animate-twinkle"
+  1845→                                  style={{
+  1846→+                                   top: "72.02019054683684%"
+  1847→-                                   top: "78.6219%"
+  1848→+                                   left: "8.563802729133553%"
+  1849→-                                   left: "40.6491%"
+  1850→+                                   width: 3.77685935882155
+  1851→-                                   width: "2.83412px"
+  1852→+                                   height: 3.77685935882155
+  1853→-                                   height: "2.83412px"
+  1854→+                                   animationDelay: "3.3485041697742917s"
+  1855→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+  1856→+                                   borderRadius: 9999
+  1857→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+  1858→-                                   animation-delay: "0.689321s"
+  1859→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+  1860→-                                   background-position-x: "initial"
+  1861→-                                   background-position-y: "initial"
+  1862→-                                   background-size: "initial"
+  1863→-                                   background-repeat: "initial"
+  1864→-                                   background-attachment: "initial"
+  1865→-                                   background-origin: "initial"
+  1866→-                                   background-clip: "initial"
+  1867→-                                   background-color: "initial"
+  1868→-                                   border-top-left-radius: "9999px"
+  1869→-                                   border-top-right-radius: "9999px"
+  1870→-                                   border-bottom-right-radius: "9999px"
+  1871→-                                   border-bottom-left-radius: "9999px"
+  1872→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+  1873→                                  }}
+  1874→                                >
+  1875→                                <span
+  1876→                                  className="absolute animate-twinkle"
+  1877→                                  style={{
+  1878→+                                   top: "47.69797596915903%"
+  1879→-                                   top: "97.5909%"
+  1880→+                                   left: "0.824500571717246%"
+  1881→-                                   left: "77.4602%"
+  1882→+                                   width: 2.5691402493677664
+  1883→-                                   width: "3.44294px"
+  1884→+                                   height: 2.5691402493677664
+  1885→-                                   height: "3.44294px"
+  1886→+                                   animationDelay: "1.279420414487444s"
+  1887→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+  1888→+                                   borderRadius: 9999
+  1889→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+  1890→-                                   animation-delay: "1.09258s"
+  1891→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+  1892→-                                   background-position-x: "initial"
+  1893→-                                   background-position-y: "initial"
+  1894→-                                   background-size: "initial"
+  1895→-                                   background-repeat: "initial"
+  1896→-                                   background-attachment: "initial"
+  1897→-                                   background-origin: "initial"
+  1898→-                                   background-clip: "initial"
+  1899→-                                   background-color: "initial"
+  1900→-                                   border-top-left-radius: "9999px"
+  1901→-                                   border-top-right-radius: "9999px"
+  1902→-                                   border-bottom-right-radius: "9999px"
+  1903→-                                   border-bottom-left-radius: "9999px"
+  1904→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+  1905→                                  }}
+  1906→                                >
+  1907→                                <span
+  1908→                                  className="absolute animate-twinkle"
+  1909→                                  style={{
+  1910→+                                   top: "90.60219845063976%"
+  1911→-                                   top: "60.6706%"
+  1912→+                                   left: "23.335260217230967%"
+  1913→-                                   left: "33.0006%"
+  1914→+                                   width: 4.19142966983931
+  1915→-                                   width: "2.97935px"
+  1916→+                                   height: 4.19142966983931
+  1917→-                                   height: "2.97935px"
+  1918→+                                   animationDelay: "1.880843711689856s"
+  1919→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+  1920→+                                   borderRadius: 9999
+  1921→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+  1922→-                                   animation-delay: "3.85117s"
+  1923→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+  1924→-                                   background-position-x: "initial"
+  1925→-                                   background-position-y: "initial"
+  1926→-                                   background-size: "initial"
+  1927→-                                   background-repeat: "initial"
+  1928→-                                   background-attachment: "initial"
+  1929→-                                   background-origin: "initial"
+  1930→-                                   background-clip: "initial"
+  1931→-                                   background-color: "initial"
+  1932→-                                   border-top-left-radius: "9999px"
+  1933→-                                   border-top-right-radius: "9999px"
+  1934→-                                   border-bottom-right-radius: "9999px"
+  1935→-                                   border-bottom-left-radius: "9999px"
+  1936→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+  1937→                                  }}
+  1938→                                >
+  1939→                                <span
+  1940→                                  className="absolute animate-twinkle"
+  1941→                                  style={{
+  1942→+                                   top: "60.07695796080523%"
+  1943→-                                   top: "36.7023%"
+  1944→+                                   left: "35.40187112313436%"
+  1945→-                                   left: "19.7377%"
+  1946→+                                   width: 2.5542604657138837
+  1947→-                                   width: "2.23191px"
+  1948→+                                   height: 2.5542604657138837
+  1949→-                                   height: "2.23191px"
+  1950→+                                   animationDelay: "1.021915484291168s"
+  1951→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+  1952→+                                   borderRadius: 9999
+  1953→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+  1954→-                                   animation-delay: "1.48115s"
+  1955→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+  1956→-                                   background-position-x: "initial"
+  1957→-                                   background-position-y: "initial"
+  1958→-                                   background-size: "initial"
+  1959→-                                   background-repeat: "initial"
+  1960→-                                   background-attachment: "initial"
+  1961→-                                   background-origin: "initial"
+  1962→-                                   background-clip: "initial"
+  1963→-                                   background-color: "initial"
+  1964→-                                   border-top-left-radius: "9999px"
+  1965→-                                   border-top-right-radius: "9999px"
+  1966→-                                   border-bottom-right-radius: "9999px"
+  1967→-                                   border-bottom-left-radius: "9999px"
+  1968→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+  1969→                                  }}
+  1970→                                >
+  1971→                                <span
+  1972→                                  className="absolute animate-twinkle"
+  1973→                                  style={{
+  1974→+                                   top: "7.743732819542992%"
+  1975→-                                   top: "65.9166%"
+  1976→+                                   left: "23.889831281206586%"
+  1977→-                                   left: "91.2464%"
+  1978→+                                   width: 2.5165527580026756
+  1979→-                                   width: "4.12874px"
+  1980→+                                   height: 2.5165527580026756
+  1981→-                                   height: "4.12874px"
+  1982→+                                   animationDelay: "2.955651718721501s"
+  1983→+                                   background: "radial-gradient(circle, #fff8d6, #f5d061)"
+  1984→+                                   borderRadius: 9999
+  1985→+                                   boxShadow: "0 0 8px rgba(245,208,97,0.8)"
+  1986→-                                   animation-delay: "2.91227s"
+  1987→-                                   background-image: "radial-gradient(circle, rgb(255, 248, 214), rgb(245, 208, 97))"
+  1988→-                                   background-position-x: "initial"
+  1989→-                                   background-position-y: "initial"
+  1990→-                                   background-size: "initial"
+  1991→-                                   background-repeat: "initial"
+  1992→-                                   background-attachment: "initial"
+  1993→-                                   background-origin: "initial"
+  1994→-                                   background-clip: "initial"
+  1995→-                                   background-color: "initial"
+  1996→-                                   border-top-left-radius: "9999px"
+  1997→-                                   border-top-right-radius: "9999px"
+  1998→-                                   border-bottom-right-radius: "9999px"
+  1999→-                                   border-bottom-left-radius: "9999px"
+  2000→-                                   box-shadow: "rgba(245, 208, 97, 0.8) 0px 0px 8px"
+
+[showing lines 1-2000 of 3750; use offset=2001 with limit to continue reading]

@@ -53,3 +53,17 @@ Verification (Agent Browser):
 
 Stage Summary:
 - Website complete and browser-verified end-to-end. All core flows work (nav, FAQ, form->DB->WhatsApp, mobile responsive, sticky footer).
+
+---
+Task ID: 9
+Agent: main (orchestrator)
+Task: Fix hydration mismatch error reported by user (Console Error from pasted log).
+
+Work Log:
+- Read uploaded error log: "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties."
+- Root cause: FloatingGoldParticles & Twinkles used Math.random() inside useMemo. useMemo runs during render on BOTH server (SSR) and client (hydration), and Math.random() produces different values each time -> server HTML attributes (top/left/width) differed from client -> hydration mismatch.
+- Fix: replaced Math.random() with a deterministic seeded PRNG (mulberry32) using fixed seeds (0x9e3779b1 for particles, 0x85ebca77 for stars). This guarantees identical sequences on server and client.
+- Verified: ESLint clean; page HTTP 200; Agent Browser console/errors empty (no hydration mismatch); VLM confirms gold particles still render visually.
+
+Stage Summary:
+- Hydration mismatch fully resolved. Particles/twinkles remain animated and visually identical, now SSR-safe.
