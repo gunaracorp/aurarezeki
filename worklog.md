@@ -364,3 +364,17 @@ Work Log:
 
 Stage Summary:
 - v1.3.2 committed. User must: (1) re-download workspace, (2) verify package.json shows 1.3.1, (3) upload to Vercel with "Use existing Build Cache" UNCHECKED, (4) verify footer shows v1.3.2 after deploy. See DEPLOY_GUIDE.md.
+
+---
+Task ID: 21
+Agent: main (orchestrator)
+Task: Remove "Umma Amadea" nickname, replace with "Umma Yunita"; change email to admin@dara.web.id. Bump to v1.3.2.
+
+Work Log:
+- site-data.ts: ownerNickname "Umma Amadea" -> "Umma Yunita"; email "info@aurarezeki.id" -> "admin@dara.web.id".
+- contact-form.tsx, footer.tsx, location.tsx: made nickname display conditional ({SITE.ownerNickname !== SITE.ownerName}) so no redundant "(Umma Yunita)" appears next to "Umma Yunita".
+- Lint clean. Verified server: "Umma Amadea" gone, "Umma Yunita" present, "admin@dara.web.id" present.
+- Committed (6ba69bc) + version bump to v1.3.2 for fresh deploy marker.
+
+Stage Summary:
+- Owner display: "Umma Yunita" (no redundant nickname). Email: admin@dara.web.id. v1.3.2 committed — ready for fresh download & Vercel redeploy (without build cache).
