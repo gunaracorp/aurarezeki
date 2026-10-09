@@ -258,3 +258,91 @@ Verification (Agent Browser + VLM):
 
 Stage Summary:
 - Footer credits now minimal & elegant (no big cards). Premium feel restored. Same links, same v1.3.0 badge, much smaller footprint.
+
+---
+Task ID: 19
+Agent: main (orchestrator)
+Task: Verify latest changes are live + comprehensive worklog update (user reported preview showing stale/old version).
+
+Work Log:
+- Diagnosed: dev server (next dev, PID 1055) running normally; lint clean; HTTP 200; all latest changes verified live in DOM.
+- Likely cause of "stale" preview: browser cache on Preview Panel — recommended hard refresh (Ctrl+Shift+R).
+- Verified current live state via Agent Browser (footer DOM check):
+  - "berkah tauhid" (old AI signature) → GONE ✓
+  - "All rights reserved." → present ✓
+  - "v1.3.0" badge → present ✓
+  - "Dashboard SEO" link → GONE (hidden) ✓
+  - "Hosted by JuraganWebsite" minimal credit → present ✓
+  - "System by PT Digital Bisnis Manajemen" minimal credit → present ✓
+- Verified full-site SEO still active: 22 JSON-LD scripts in <head>, 9 sitemap URLs, robots.txt with /seo disallowed.
+
+═══════════════════════════════════════════════════════════
+FINAL STATE SUMMARY — Therapy Aura Rezeki v1.3.0
+═══════════════════════════════════════════════════════════
+
+PROJECT: Therapy Aura Rezeki — single-page premium animated website
+(Next.js 16 + TypeScript + Tailwind 4 + shadcn/ui + Framer Motion + Prisma/SQLite)
+VERSION: v1.3.0 (Semantic Versioning — MAJOR 1, MINOR 3, PATCH 0)
+
+OWNER / CONTACT:
+  • Owner: Umma Yunita (nickname: Umma Amadea)
+  • WhatsApp: 087881912019 (intl 6287881912019)
+  • Address: Pondok Pucung Indah II, Jl. Tarumanegara A22/1, Pondok Pucung,
+             Pondok Aren, Tangerang Selatan 15229
+  • Hours: Setiap Hari · 08.00–21.00 WIB
+
+SECTIONS (homepage, in order):
+  1. Navbar (sticky, scroll-aware, mobile drawer) + Lokasi link
+  2. Hero (full-screen, gold particles, parallax image, CountUp stats)
+  3. Marquee (scrolling benefit keywords, gold gradient band)
+  4. About / Tauhid (3 pillars + floating quote card)
+  5. AuroraDivider (flowing gradient + rotating diamond ornament)
+  6. Benefits (29 manfaat in 3 themed groups, shimmer hover)
+  7. How It Works (4-step process, numbered gold bubbles)
+  8. Testimonials (auto-rotating carousel, dots, prev/next)
+  9. AuroraDivider
+ 10. Pricing (3 packages: Awal/Pelarisan/Royal, TiltCard 3D, WA deep links)
+ 11. FAQ (numbered accordion, animated expand)
+ 12. CtaBanner (gradient + particles + dual CTA)
+ 13. Location (Google Maps embed + animated address card + corner ornaments)
+ 14. ContactForm (validated → POST /api/leads → SQLite → WA prefilled + toast)
+ 15. SeoContent (organic keyword copy + muted keyword cloud)
+ 16. Footer (4-col: brand/links/contact/CTA + minimal credit line)
+
+HIDDEN INTERNAL ROUTE:
+  • /seo — full SEO dashboard (score gauge, SERP preview, keywords, JSON-LD viewer,
+    release metadata). No public link; robots.txt disallowed; noindex meta.
+
+SEO (full built-in, setara Rank Math Premium):
+  • 22 JSON-LD schemas: WebSite, Organization, LocalBusiness, Service, Person,
+    FAQPage, BreadcrumbList, 4× Review, AggregateRating, Offer, etc.
+  • Dynamic sitemap.xml (9 URLs), robots.txt, manifest.json (PWA)
+  • Meta: title template, OG, Twitter Card, canonical, geo (ID-BT), theme-color
+  • Version: package.json "1.3.0"; footer badge "v1.3.0"; /seo release metadata
+
+FOOTER (minimal, premium):
+  • © 2026 Therapy Aura Rezeki. All rights reserved. [v1.3.0]
+  • Hosted by JuraganWebsite · System by PT Digital Bisnis Manajemen (small links)
+  • NO "Dibuat dengan ❤ berkah tauhid" (removed — looked AI-made)
+
+BACKEND:
+  • POST /api/leads (zod-validated, Prisma → SQLite Lead model)
+  • GET /api/leads (count)
+
+ANIMATIONS:
+  • FloatingGoldParticles, Twinkles, AuraBlobs (deterministic seeded PRNG — SSR-safe)
+  • CountUp, TiltCard (3D mouse-follow + glare), AuroraDivider
+  • Parallax hero (useScroll/useTransform), reveal-on-scroll, shimmer sweeps
+  • Floating WhatsApp button (appears after scroll, expandable chat card)
+
+VERIFICATION STATUS: ALL PASS
+  • ESLint: 0 errors, 0 warnings
+  • Dev server: HTTP 200, ~0.12s response
+  • No console/hydration/page errors
+  • All DOM checks confirm latest content live
+  • Workspace optimized (~4MB, git history cleaned)
+
+Stage Summary:
+- Website at v1.3.0 final state, all features verified live. Worklog now reflects
+  complete project state. If preview shows stale content, user should hard-refresh
+  the Preview Panel (Ctrl+Shift+R) to bypass browser cache.
