@@ -91,9 +91,11 @@ export function Footer() {
                     <span className="mt-0.5 block font-display text-base font-bold text-gold-light">
                       {SITE.whatsapp}
                     </span>
-                    <span className="text-xs italic text-amber-100/60">
-                      ({SITE.ownerNickname})
-                    </span>
+                    {SITE.ownerNickname !== SITE.ownerName && (
+                      <span className="text-xs italic text-amber-100/60">
+                        ({SITE.ownerNickname})
+                      </span>
+                    )}
                   </span>
                 </a>
               </li>

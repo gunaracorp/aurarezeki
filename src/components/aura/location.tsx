@@ -70,10 +70,13 @@ export function Location() {
                   <p className="leading-relaxed text-foreground/85">
                     <span className="font-semibold text-foreground">
                       {SITE.ownerName}
-                    </span>{" "}
-                    <span className="italic text-muted-foreground">
-                      ({SITE.ownerNickname})
                     </span>
+                    {SITE.ownerNickname !== SITE.ownerName && (
+                      <span className="italic text-muted-foreground">
+                        {" "}
+                        ({SITE.ownerNickname})
+                      </span>
+                    )}
                   </p>
                 </div>
                 <div className="flex items-start gap-3">

@@ -117,9 +117,11 @@ export function ContactForm() {
                   <p className="font-display text-lg font-bold text-foreground">
                     {SITE.whatsapp}
                   </p>
-                  <p className="text-xs italic text-muted-foreground">
-                    ({SITE.ownerNickname})
-                  </p>
+                  {SITE.ownerNickname !== SITE.ownerName && (
+                    <p className="text-xs italic text-muted-foreground">
+                      ({SITE.ownerNickname})
+                    </p>
+                  )}
                 </div>
                 <Send className="h-5 w-5 text-gold-deep transition-transform group-hover:translate-x-1" />
               </a>

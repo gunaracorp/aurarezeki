@@ -34,10 +34,10 @@ export const SITE = {
   subBrand: "QUEEN AURA",
   tagline: "Rezeki paling tinggi adalah TAUHID",
   ownerName: "Umma Yunita",
-  ownerNickname: "Umma Amadea",
+  ownerNickname: "Umma Yunita",
   whatsapp: "087881912019",
   whatsappIntl: "6287881912019",
-  email: "info@aurarezeki.id",
+  email: "admin@dara.web.id",
   address:
     "Pondok Pucung Indah II, Jl. Tarumanegara A22/1, Pondok Pucung, Pondok Aren, Tangerang Selatan 15229",
   addressShort: "Pondok Pucung, Pondok Aren, Tangerang Selatan 15229",
