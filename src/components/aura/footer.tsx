@@ -157,7 +157,7 @@ export function Footer() {
             <span>&copy; {new Date().getFullYear()} {SITE.brand}. All rights reserved.</span>
             <span className="inline-flex items-center gap-1 rounded-full border border-gold/25 bg-gold/5 px-2 py-0.5 font-semibold text-gold-light/80">
               <span className="h-1 w-1 rounded-full bg-gold-light/70" />
-              v1.3.0
+              v1.3.1
             </span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-[11px] text-amber-100/40">
