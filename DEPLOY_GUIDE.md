@@ -1,9 +1,9 @@
-# Panduan Deploy ke Vercel — Therapy Aura Rezeki v1.3.1
+# Panduan Deploy ke Vercel — Therapy Aura Rezeki v1.3.2
 
 ## Cara deploy yang BENAR (supaya versi terbaru tampil):
 
 ### 1. Download workspace (ZIP terbaru)
-- Download ulang workspace setelah commit v1.3.1
+- Download ulang workspace setelah commit v1.3.2
 - Extract ZIP di komputer Anda
 
 ### 2. Verifikasi versi sebelum upload
@@ -37,7 +37,7 @@ Kalau masih `1.3.0` atau nomor `087725581800` → ZIP masih versi lama, download
 
 ### 5. Setelah deploy selesai, verifikasi:
 - Buka URL Vercel (xxx.vercel.app)
-- Scroll ke footer → pastikan ada badge **v1.3.1**
+- Scroll ke footer → pastikan ada badge **v1.3.2**
 - Cek section kontak → pastikan nomor **087881912019**
 - Cek section lokasi → pastikan alamat **Jl. Tarumanegara A22/1**
 - Cek Google Maps embed → pastikan alamat baru
@@ -55,7 +55,7 @@ Note: SQLite tidak persisten di Vercel serverless. Untuk production, ganti ke Po
 3. Coba buka di incognito/private window
 4. Cek di Vercel dashboard → "Build Logs" → pastikan build berhasil tanpa error
 
-## Versi saat ini: v1.3.1
+## Versi saat ini: v1.3.2
 - Semua kontak/alamat sudah benar (Umma Yunita, 087881912019, A22/1)
 - Footer minimal premium (no "berkah tauhid")
 - SEO full built-in aktif
