@@ -346,3 +346,21 @@ Stage Summary:
 - Website at v1.3.0 final state, all features verified live. Worklog now reflects
   complete project state. If preview shows stale content, user should hard-refresh
   the Preview Panel (Ctrl+Shift+R) to bypass browser cache.
+
+---
+Task ID: 20
+Agent: main (orchestrator)
+Task: Fix "Vercel still shows old version" issue — user reported downloading workspace and uploading to Vercel, but Vercel still displays old contact/address/phone.
+
+Diagnosis:
+- Git HEAD already contained the latest version (Umma Yunita, 087881912019, A22/1).
+- Root cause: either (a) downloaded ZIP was a stale snapshot from before latest commits, or (b) Vercel reused build cache instead of rebuilding from new source.
+
+Work Log:
+- Bumped version to v1.3.1 (patch) as explicit fresh-deploy marker so user can verify the downloaded ZIP and Vercel deployment are truly the latest.
+- Updated version in package.json, footer badge, and /seo dashboard release metadata.
+- Created DEPLOY_GUIDE.md with step-by-step instructions: how to verify ZIP version before upload, how to redeploy on Vercel WITHOUT "use existing Build Cache", how to set DATABASE_URL env var, and how to verify post-deploy.
+- Committed all changes (commit c6cee8e) so git HEAD now definitely contains v1.3.1 + all latest contact/address data.
+
+Stage Summary:
+- v1.3.1 committed. User must: (1) re-download workspace, (2) verify package.json shows 1.3.1, (3) upload to Vercel with "Use existing Build Cache" UNCHECKED, (4) verify footer shows v1.3.1 after deploy. See DEPLOY_GUIDE.md.
