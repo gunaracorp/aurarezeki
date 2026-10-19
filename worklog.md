@@ -378,3 +378,38 @@ Work Log:
 
 Stage Summary:
 - Owner display: "Umma Yunita" (no redundant nickname). Email: admin@dara.web.id. v1.3.2 committed — ready for fresh download & Vercel redeploy (without build cache).
+
+---
+Task ID: 22
+Agent: main (orchestrator)
+Task: Build full SEO multi-halaman — every page SEO-friendly for Google, Bing, Yandex, DuckDuckGo, and all search engines.
+
+Work Log:
+- Created src/lib/seo-pages.ts: per-page SEO config for 8 pages (home + 7 landing). Each page has unique title (≤60 char), description (≤160 char), focus keyword, keyword list, H1, subtitle, organic body copy (3 paragraphs), breadcrumb label, changeFreq, priority, index flag. Plus generatePageMetadata() (Next.js Metadata API: title/desc/keywords/canonical/OG/Twitter/robots per page) and generatePageSchemas() (page-specific JSON-LD: BreadcrumbList for all + Service for service pages + ProfilePage for author + ItemList for paket + CollectionPage/Review for testimoni).
+- Created src/components/aura/page-head.tsx: server component that injects page-specific JSON-LD into <head>.
+- Created src/components/aura/landing-page.tsx: reusable LandingPage component (hero with H1/subtitle/CTA, SEO body paragraphs, page-specific extras: benefit lists, how-to steps, profile card, pricing cards, testimonials, final CTA, trust stats). Each page gets unique rich content.
+- Created 7 new page routes:
+  • /pelarisan-usaha — keyword "pelarisan usaha" + 8 manfaat
+  • /pelunasan-hutang — keyword "pelunasan hutang" + 8 manfaat
+  • /terapi-aura — keyword "terapi aura" + 10 manfaat
+  • /konsultasi-spiritual — keyword "konsultasi spiritual" + 3-step process
+  • /tentang-umma-yunita — author ProfilePage + profile card
+  • /paket-terapi — ItemList of 3 packages
+  • /testimoni — CollectionPage + Review schemas
+  Each page: generatePageMetadata + PageHead + LandingPage.
+- Created src/components/aura/service-links.tsx: "Layanan Kami" section on homepage with 7 internal links to all landing pages (gold gradient icon cards, shimmer hover). Internal linking for SEO.
+- Updated src/app/page.tsx: added ServiceLinks section after Benefits.
+- Updated src/app/sitemap.ts: now iterates over PAGES array (8 URLs with priorities 0.7-1.0).
+
+Verification (Agent Browser + curl):
+- ESLint clean (0 errors, 0 warnings).
+- All 11 endpoints HTTP 200: / /pelarisan-usaha /pelunasan-hutang /terapi-aura /konsultasi-spiritual /tentang-umma-yunita /paket-terapi /testimoni /seo /robots.txt /sitemap.xml.
+- Sitemap.xml contains all 8 indexable URLs with proper priorities.
+- Per-page verification (curl): each page has unique <title>, meta description, canonical URL, and JSON-LD schemas (WebSite, Organization, BreadcrumbList, + page-specific Service/ProfilePage/ItemList/CollectionPage).
+- /pelarisan-usaha DOM check: H1 "Pelarisan Usaha Islami" present, keyword "pelarisan usaha" present, body content with "dagangan"+"tauhid" present, CTA WhatsApp present, manfaat section + "Lancar usaha" benefit present.
+- Mobile (390px): no horizontal overflow, page height 2766px (responsive).
+- Homepage has 7 internal service links.
+- No console/page errors. Screenshots cleaned.
+
+Stage Summary:
+- v1.4.0 committed (2965bfa). Website now has 8 SEO-optimized pages, each with unique meta tags, canonical, JSON-LD structured data, organic keyword-targeted copy, and internal linking. Ready for full indexing by Google, Bing, Yandex, DuckDuckGo, and all search engines.
