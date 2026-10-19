@@ -4,6 +4,7 @@ import { AuroraDivider } from "@/components/aura/aurora-divider";
 import { About } from "@/components/aura/about";
 import { Marquee } from "@/components/aura/marquee";
 import { Benefits } from "@/components/aura/benefits";
+import { ServiceLinks } from "@/components/aura/service-links";
 import { HowItWorks } from "@/components/aura/how-it-works";
 import { Testimonials } from "@/components/aura/testimonials";
 import { Pricing } from "@/components/aura/pricing";
@@ -25,6 +26,7 @@ export default function Home() {
         <About />
         <AuroraDivider />
         <Benefits />
+        <ServiceLinks />
         <HowItWorks />
         <Testimonials />
         <AuroraDivider />

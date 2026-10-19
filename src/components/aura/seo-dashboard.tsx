@@ -215,7 +215,7 @@ export function SeoDashboard({ siteUrl }: { siteUrl: string }) {
               </h3>
               <span className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-gold-gradient px-3 py-0.5 text-xs font-bold text-white shadow-warm">
                 <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse-glow" />
-                v1.3.2
+                v1.4.0
               </span>
             </div>
             <div className="grid grid-cols-1 gap-3 p-4 sm:grid-cols-3">
@@ -244,7 +244,7 @@ export function SeoDashboard({ siteUrl }: { siteUrl: string }) {
             </div>
             <div className="border-t border-gold/15 px-4 py-3">
               <p className="text-xs leading-relaxed text-muted-foreground">
-                <span className="font-semibold text-gold-deep">Changelog v1.3.2:</span>{" "}
+                <span className="font-semibold text-gold-deep">Changelog v1.4.0:</span>{" "}
                 Full organic SEO built-in (22 JSON-LD schemas, dynamic sitemap &amp;
                 robots.txt, PWA manifest, geo meta), Google Maps embed, 3D tilt &amp;
                 parallax animations, CountUp stats, aurora divider, footer credits
