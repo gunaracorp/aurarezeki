@@ -8,6 +8,7 @@ import {
   Clock,
 } from "lucide-react";
 import { SITE, waLink } from "@/lib/site-data";
+import { BRAND_CORE, SOCIAL_PROFILES } from "@/lib/branding";
 
 const LINKS = [
   { label: "Beranda", href: "#beranda" },
@@ -164,12 +165,12 @@ export function Footer() {
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-[11px] text-amber-100/40">
             <a
-              href="https://juraganwebsite.web.id"
+              href="https://topkonsultan.web.id"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors hover:text-gold-light"
             >
-              Hosted by JuraganWebsite
+              {BRAND_CORE.companies[0].name}
             </a>
             <span className="text-amber-100/20">·</span>
             <a
@@ -178,9 +179,20 @@ export function Footer() {
               rel="noopener noreferrer"
               className="transition-colors hover:text-gold-light"
             >
-              System by PT Digital Bisnis Manajemen
+              {BRAND_CORE.companies[1].name}
             </a>
           </div>
+        </div>
+
+        {/* Support-system attribution — low-profile line (hidden-in-plain-sight) */}
+        <div
+          aria-label="Support system attribution"
+          className="mt-3 select-none text-center text-[9px] leading-relaxed tracking-wide text-amber-100/25"
+        >
+          Support System {BRAND_CORE.attribution} · PT Top Konsultan Internasional (topkonsultan.web.id) · PT Digital Bisnis Manajemen (digiman.id)
+          <span className="sr-only">
+            {" "}Profil resmi: {SOCIAL_PROFILES.map((s) => `${s.platform} ${s.handle} (${s.url})`).join(" · ")}
+          </span>
         </div>
       </div>
     </footer>

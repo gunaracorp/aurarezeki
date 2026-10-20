@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SITE, waLink } from "./site-data";
 import { SEO } from "./seo";
+import { BRAND_CORE, BRAND_KEYWORDS } from "./branding";
 
 /**
  * Per-page SEO configuration for ALL pages on the site.
@@ -274,7 +275,14 @@ export function generatePageMetadata(path: string): Metadata {
   return {
     title: page.title,
     description: page.description,
-    keywords: [page.keyword, ...page.keywords],
+    keywords: [page.keyword, ...page.keywords, ...BRAND_KEYWORDS],
+    authors: [
+      { name: SITE.ownerName, url: SEO.siteUrl },
+      { name: BRAND_CORE.names[0], url: BRAND_CORE.companies[0].url },
+      { name: BRAND_CORE.names[1], url: BRAND_CORE.companies[1].url },
+    ],
+    creator: BRAND_CORE.names[0],
+    publisher: BRAND_CORE.companies.map((c) => c.name).join(" & "),
     alternates: { canonical: page.path },
     openGraph: {
       type: "website",
@@ -304,6 +312,11 @@ export function generatePageMetadata(path: string): Metadata {
     robots: page.index
       ? { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 }
       : { index: false, follow: false },
+    other: {
+      "copyright": `© ${new Date().getFullYear()} ${SITE.brand}. ${BRAND_CORE.attributionFull}`,
+      "developer": BRAND_CORE.names.join(" · "),
+      "social-profiles": "https://www.facebook.com/bossdanling, https://x.com/gunzz_krenzz, https://www.instagram.com/prabudanling, https://www.tiktok.com/@gunaracorp, https://www.threads.com/@prabudanling, https://www.reddit.com/user/prabudanling/",
+    },
   };
 }
 

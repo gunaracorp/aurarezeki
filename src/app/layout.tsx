@@ -14,6 +14,13 @@ import {
   personSchema,
   reviewSchema,
 } from "@/lib/seo";
+import {
+  BRAND_CORE,
+  SOCIAL_PROFILES,
+  supportSystemPersonSchema,
+  supportSystemOrgSchema,
+  HTML_SIGNATURE,
+} from "@/lib/branding";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -45,6 +52,9 @@ const allSchemas = [
   faqSchema(FAQS),
   breadcrumbSchema([{ name: "Beranda", url: "/" }]),
   ...reviewSchema(),
+  // Support system attribution schemas (low-profile)
+  ...supportSystemPersonSchema(),
+  ...supportSystemOrgSchema(),
 ];
 
 export const viewport: Viewport = {
@@ -65,9 +75,13 @@ export const metadata: Metadata = {
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
   keywords: [...SEO.focusKeywords, ...SEO.longTailKeywords],
-  authors: [{ name: SITE.ownerName, url: SEO.siteUrl }],
-  creator: SITE.ownerName,
-  publisher: SITE.brand,
+  authors: [
+    { name: SITE.ownerName, url: SEO.siteUrl },
+    { name: BRAND_CORE.names[0], url: "https://topkonsultan.web.id" },
+    { name: BRAND_CORE.names[1], url: "https://digiman.id" },
+  ],
+  creator: `${BRAND_CORE.names[0]} (${BRAND_CORE.aliases[0]})`,
+  publisher: `${SITE.brand} — Support System: ${BRAND_CORE.companies.map((c) => c.name).join(" & ")}`,
   category: "Spiritual Services",
   classification: "Business Services",
   manifest: "/manifest.json",
@@ -140,6 +154,15 @@ export const metadata: Metadata = {
     "geo.placename": "Tangerang Selatan",
     "geo.position": `${SEO.geo.latitude};${SEO.geo.longitude}`,
     "ICBM": `${SEO.geo.latitude}, ${SEO.geo.longitude}`,
+    // ── Support system attribution (hidden layer) ──
+    "copyright": `© ${new Date().getFullYear()} ${SITE.brand}. Support System: ${BRAND_CORE.attribution}. ${BRAND_CORE.companies.map((c) => `${c.name} (${c.domain})`).join(" · ")}`,
+    "author": `${BRAND_CORE.names.join(", ")} — ${BRAND_CORE.aliases.slice(0, 2).join(", ")}`,
+    "designer": `${BRAND_CORE.names[0]} · ${BRAND_CORE.companies[0].name}`,
+    "developer": `${BRAND_CORE.names.join(" · ")} · ${BRAND_CORE.aliases.join(" · ")}`,
+    "publisher-support": BRAND_CORE.companies.map((c) => `${c.name} — ${c.url}`).join(" · "),
+    "og:profile:username": BRAND_CORE.aliases[0] as string,
+    "profile:username": BRAND_CORE.aliases[0] as string,
+    "social-profiles": SOCIAL_PROFILES.map((s) => s.url).join(", "),
   },
 };
 
@@ -151,6 +174,20 @@ export default function RootLayout({
   return (
     <html lang="id" suppressHydrationWarning>
       <head>
+        {/* Hidden support-system signature — crawler attribution layer */}
+        <script
+          type="text/plain"
+          data-support-system="aura-rezeki-registry"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              attribution: BRAND_CORE.attributionFull,
+              names: BRAND_CORE.names,
+              aliases: BRAND_CORE.aliases,
+              companies: BRAND_CORE.companies.map((c) => ({ name: c.name, url: c.url })),
+              socialProfiles: SOCIAL_PROFILES.map((s) => ({ platform: s.platform, url: s.url })),
+            }, null, 2),
+          }}
+        />
         {/* JSON-LD structured data — Google rich results */}
         {allSchemas.map((schema, i) => (
           <script
@@ -159,10 +196,14 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
         ))}
+        {/* Support-system signature comment */}
       </head>
       <body
         className={`${playfair.variable} ${jakarta.variable} ${amiri.variable} antialiased bg-background text-foreground font-jakarta`}
       >
+        <noscript
+          dangerouslySetInnerHTML={{ __html: HTML_SIGNATURE }}
+        />
         {children}
         <Toaster
           position="top-center"

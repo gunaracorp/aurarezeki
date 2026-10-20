@@ -90,5 +90,34 @@
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.5",
     "typescript": "^5"
+  },
+  "author": {
+    "name": "Gugun Gunara",
+    "email": "prabudanling@gmail.com",
+    "url": "https://topkonsultan.web.id"
+  },
+  "contributors": [
+    {
+      "name": "Muhammad Lutfi Azmi",
+      "url": "https://digiman.id"
+    },
+    {
+      "name": "prabudanling (Santri Angon)"
+    }
+  ],
+  "support_system": {
+    "attribution": "by Gugun Gunara - Muhammad Lutfi Azmi - prabudanling - santri angon",
+    "organizations": [
+      "PT Top Konsultan Internasional (topkonsultan.web.id)",
+      "PT Digital Bisnis Manajemen (digiman.id)"
+    ],
+    "social": {
+      "facebook": "https://www.facebook.com/bossdanling",
+      "x": "https://x.com/gunzz_krenzz",
+      "instagram": "https://www.instagram.com/prabudanling",
+      "tiktok": "https://www.tiktok.com/@gunaracorp",
+      "threads": "https://www.threads.com/@prabudanling",
+      "reddit": "https://www.reddit.com/user/prabudanling/"
+    }
   }
 }

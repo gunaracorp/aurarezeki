@@ -1,4 +1,5 @@
 import { SITE, waLink } from "./site-data";
+import { BRAND_KEYWORDS, SOCIAL_URLS } from "./branding";
 
 /**
  * Central SEO configuration — equivalent to a Rank Math / Yoast premium setup.
@@ -40,6 +41,7 @@ export const SEO = {
     "Umma Yunita",
     "pelarisan online shop",
     "penglaris jualan",
+    ...BRAND_KEYWORDS,
   ],
 
   // ── Long-tail / secondary keywords ───────────────────────
@@ -137,7 +139,7 @@ export function organizationSchema() {
         url: waLink(),
       },
     ],
-    sameAs: [waLink()],
+    sameAs: [waLink(), "https://topkonsultan.web.id", "https://digiman.id", ...SOCIAL_URLS],
   };
 }
 
@@ -326,7 +328,12 @@ export function personSchema() {
       "Wirid pelarisan",
       "Tauhid",
     ],
-    sameAs: [waLink()],
+    sameAs: [waLink(), "https://topkonsultan.web.id", "https://digiman.id"],
+    knowsLanguage: ["id"],
+    memberOf: [
+      { "@type": "Organization", name: "PT Top Konsultan Internasional", url: "https://topkonsultan.web.id" },
+      { "@type": "Organization", name: "PT Digital Bisnis Manajemen", url: "https://digiman.id" },
+    ],
   };
 }
 

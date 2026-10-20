@@ -9,6 +9,10 @@
   "orientation": "portrait-primary",
   "lang": "id-ID",
   "categories": ["lifestyle", "business", "health"],
+  "creator": "Gugun Gunara · Muhammad Lutfi Azmi (prabudanling · Santri Angon)",
+  "publisher": "PT Top Konsultan Internasional (topkonsultan.web.id) · PT Digital Bisnis Manajemen (digiman.id)",
+  "related_applications": [],
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "/aura/queen-aura.jpeg",
